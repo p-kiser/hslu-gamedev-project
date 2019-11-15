@@ -11,6 +11,8 @@ public class MovePlayer : MonoBehaviour
     [SerializeField]
     private float rotateSpeed = 3.0f;
 
+    Animator animator;
+
     private int jumps;
     private float gravity = 20.0f;
     private Vector3 moveDirection = Vector3.zero;
@@ -21,7 +23,8 @@ public class MovePlayer : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-       controller = GetComponent<CharacterController>();
+        controller = GetComponent<CharacterController>();
+        animator = GetComponent<Animator>();
 
         jumps = 0;
     }
@@ -41,6 +44,7 @@ public class MovePlayer : MonoBehaviour
         {
             moveDirection.y = jumpHeight;
             jumps++;
+            animator.SetTrigger("Jump");
         }
         Debug.Log("Jumps: " + jumps);
         moveDirection.y -= gravity * Time.deltaTime;
