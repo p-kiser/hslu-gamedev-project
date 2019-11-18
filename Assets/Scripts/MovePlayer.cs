@@ -12,6 +12,7 @@ public class MovePlayer : MonoBehaviour
     private float rotateSpeed = 3.0f;
 
     Animator animator;
+    private const int MAX_JUMPS = 2;
 
     private int jumps;
     private float gravity = 20.0f;
@@ -40,7 +41,7 @@ public class MovePlayer : MonoBehaviour
             moveDirection *= speed;
             
         }
-        if (Input.GetKeyDown(KeyCode.Space) && jumps <= 2)
+        if (Input.GetKeyDown(KeyCode.Space) && jumps < MAX_JUMPS)
         {
             moveDirection.y = jumpHeight;
             jumps++;
