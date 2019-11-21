@@ -22,7 +22,6 @@ Optional
 - [ ] 3 fancy key to collect
 - [ ] permanent powerups: health potion
 - [ ] temporary powerups: (movment speed upgrade || jumping skill) && invicibility
-- [ ] 
 
 Optional
 - [ ] Weapon
@@ -38,7 +37,6 @@ Optional
 
 - [ ] Adaptive background music
 - [ ] Sound effects for different event (taking damage, collect key etc.)
-- [ ] 
 
 ## Juciness
 
@@ -49,7 +47,11 @@ Optional
 
 ## Level design
 
+- [ ] Tutorial Area
+- [ ] Hub Area
+- [ ] Normal Area
+- [ ] Ice Area
+- [ ] Swamp Area
 - [ ] 3 different ground materials (normal, slippery, slow)
 - [ ] Interaction with objects: boxes, trampolines, spikes
-- [ ] different elevations, tunnels, stairs
-
+- [ ] Different elevations, tunnels, stairs
