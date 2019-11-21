@@ -919,10 +919,15 @@ PrefabInstance:
       propertyPath: m_SlopeLimit
       value: 25
       objectReference: {fileID: 0}
+    - target: {fileID: 3412269561825156286, guid: 50af7ba0f048b4ae58654cb993c17274,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3412269561825156282, guid: 50af7ba0f048b4ae58654cb993c17274,
         type: 3}
       propertyPath: speed
-      value: 6
+      value: 20
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 50af7ba0f048b4ae58654cb993c17274, type: 3}
