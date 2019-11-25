@@ -120,6 +120,7 @@ GameObject:
   - component: {fileID: 5641798556427457565}
   - component: {fileID: 4970933908830025638}
   - component: {fileID: 2168126302362755009}
+  - component: {fileID: 6813971667400825800}
   m_Layer: 0
   m_Name: Cylinder
   m_TagString: Untagged
@@ -135,7 +136,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6578548863586520433}
   m_LocalRotation: {x: 0.50000006, y: 0.50000006, z: 0.5, w: 0.5}
-  m_LocalPosition: {x: 0, y: 0.004, z: 0.37}
+  m_LocalPosition: {x: 0, y: 0.004, z: 0.422}
   m_LocalScale: {x: 0.6047999, y: 0.0770999, z: 0.6047999}
   m_Children: []
   m_Father: {fileID: 2766871284223282738}
@@ -187,3 +188,18 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!114 &6813971667400825800
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6578548863586520433}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 435bd115f16ca694a89e467024b927c9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  target: {fileID: 0}
+  bullet: {fileID: 0}
+  bulletSpeed: 0
