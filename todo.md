@@ -3,9 +3,18 @@
 ## Player
 
 - [x] Double jump
-- [ ] Walk & Sprint
-- [ ] Control direction during jump
+  - [ ] **Fix that FixedUpdate() stizzle**
+- [x] Walk & Sprint
+  - [ ] **no can sprint while jump, only when a walk onna floor**
+- [x] Control direction during jump
 - [ ] Health & can die, Game over
+  - [ ] Health
+  - [ ] Kill zone beneath level
+  - [ ] Respeawn
+- [ ] Interfaces which other objects can call
+  - [ ] Heal (mein Führer)
+  - [ ] Invincibility
+  - [ ] Damage dealt to the player
 - [ ] Can collect points & keys
 
 Optional
@@ -15,12 +24,15 @@ Optional
 
 - [ ] Health bar / or whatever ¯\_(ツ)_/¯
 - [ ] Collèctables (keys, points)
-- [ ] Active powerup
+- [ ] Active powerup (how long it lasts)
 
 ## Collétables
 
+- [ ] PoC Collectable: Coin 
 - [ ] 3 fancy key to collect
 - [ ] permanent powerups: health potion
+  - [ ] it shalleth check if player is at full health or nah
+  - [ ] fancy hearty particle system
 - [ ] temporary powerups: (movment speed upgrade || jumping skill) && invicibility
 
 Optional
@@ -28,9 +40,14 @@ Optional
 
 ## Enemies
 
-- [ ] Grunt: patrols a cetrain area
-- [ ] Tower: shoots at player if in range
-- [ ] Bomb: Follows player, explodes on contact
+- [x] Grunt: patrols a cetrain area
+  - [ ] Add jumping to one Grunt variant (explicitly called Grump, the one who can't jump is Grunt)
+- [x] Tower: shoots at player if in range
+  - [ ] **Recycle projectiles for environmental raisons**
+- [x] Bomb: Follows player
+  - [ ] Has to explode on contact with playeur
+- [ ] Collision zone to kill enemies on jumparoo
+- [ ] GIB coins when die
 - [ ] Two variants for each enemy type
 
 ## Sound
@@ -53,5 +70,10 @@ Optional
 - [ ] Ice Area
 - [ ] Swamp Area
 - [ ] 3 different ground materials (normal, slippery, slow)
-- [ ] Interaction with objects: boxes, trampolines, spikes
+- [ ] Interaction with objects: boxes, trampolines (bitch), spikes
 - [ ] Different elevations, tunnels, stairs
+
+Eventually optional
+
+- [ ] Lava. The fucking floor is Lava.
+- [ ] Insane fucking boss enemy (this is when the player is finally able to shoot)
