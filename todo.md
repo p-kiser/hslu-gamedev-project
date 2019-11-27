@@ -4,7 +4,7 @@
 
 - [x] Double jump
 - [ ] Walk & Sprint
-- [ ] Control direction during jump
+- [ ] Control direction during jump
 - [ ] Health & can die, Game over
 - [ ] Can collect points & keys
 
@@ -26,7 +26,7 @@ Optional
 Optional
 - [ ] Weapon
 
-## Enemies
+## Enemies
 
 - [ ] Grunt: patrols a cetrain area
 - [ ] Tower: shoots at player if in range
