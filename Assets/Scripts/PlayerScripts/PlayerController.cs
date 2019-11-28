@@ -20,6 +20,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField]
     private float runningMultiplikator = 3.0f;
 
+    Vector3 startPosition = new Vector3(0, 2, -20);
     // private variables
     private int jumps = 2;
     private int max_jumps = 2;
@@ -32,6 +33,8 @@ public class PlayerController : MonoBehaviour
         // Get Components
         rb = GetComponent<Rigidbody>();
         anim = GetComponent<Animator>();
+
+        Respawn();
     }
 
     // Update is called once per frame
@@ -41,7 +44,7 @@ public class PlayerController : MonoBehaviour
         if (IsGrounded()) jumps = 0;
 
         // Check if we are running
-        running = Input.GetKey(KeyCode.LeftShift) && IsGrounded();
+        running = Input.GetKey(KeyCode.LeftShift) /*&& IsGrounded()*/;
         
         // Calculate movement direction from inputs
         moveDirection = new Vector3(Input.GetAxis("Horizontal"), 0, Input.GetAxis("Vertical"));
@@ -92,4 +95,29 @@ public class PlayerController : MonoBehaviour
         rb.AddForce(dashVelocity, ForceMode.VelocityChange);
     }
 
+    void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.CompareTag("Coin"))
+        {
+            other.gameObject.SetActive(false);
+        }
+
+        if (other.gameObject.CompareTag("Enemy")) {
+            Debug.Log("Enemy collision");
+            Respawn();
+        }
+    }
+
+
+    private void Respawn() {
+        rb.velocity = Vector3.zero;
+        rb.angularVelocity = Vector3.zero;
+        rb.isKinematic = true;
+        // Do positioning, etc
+        transform.position = startPosition;
+        transform.rotation = Quaternion.identity;
+        // Re-enable the physics and set start position to that of the turret
+        rb.isKinematic = false;
+        transform.position = transform.position;
+    }
 }

@@ -61,7 +61,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: f881cceddf3467b47abf4512a0b03105, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -220,3 +220,5 @@ MonoBehaviour:
   bullet: {fileID: 5411225361963520354, guid: d6ba5fc6551e1314389e37cd0fe8abbf, type: 3}
   bulletSpeed: 0
   distanceToPlayer: 0
+  MAX_PROJECTILES: 10
+  INTERVAL: 1

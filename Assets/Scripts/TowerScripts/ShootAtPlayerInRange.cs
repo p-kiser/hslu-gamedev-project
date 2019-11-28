@@ -34,6 +34,7 @@ public class ShootAtPlayerInRange : MonoBehaviour
 
         for (int i = 0; i < MAX_PROJECTILES; i++) {
             projectiles[i] = Instantiate(bullet) as GameObject;
+            projectiles[i].transform.position = Vector3.down * 999;
             rbs[i] = projectiles[i].GetComponent<Rigidbody>();
         }
         index = 0; timer = 0; wait = false;
