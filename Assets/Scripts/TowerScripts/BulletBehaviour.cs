@@ -6,7 +6,6 @@ public class BulletBehaviour : MonoBehaviour
 {
     private void OnCollisionEnter(Collision collision)
     {
-        
     }
 
 }
