@@ -2364,7 +2364,7 @@ PrefabInstance:
     - target: {fileID: 6813971667400825800, guid: 2752edb3cd01a4044a5f5227d7d247e8,
         type: 3}
       propertyPath: MAX_PROJECTILES
-      value: 50
+      value: 255
       objectReference: {fileID: 0}
     - target: {fileID: 6813971667400825800, guid: 2752edb3cd01a4044a5f5227d7d247e8,
         type: 3}
