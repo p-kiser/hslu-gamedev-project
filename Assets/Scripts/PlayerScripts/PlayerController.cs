@@ -27,6 +27,9 @@ public class PlayerController : MonoBehaviour
     private Vector3 moveDirection = Vector3.zero;
     private bool running;
 
+
+    int points = 0;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -100,6 +103,7 @@ public class PlayerController : MonoBehaviour
         if (other.gameObject.CompareTag("Coin"))
         {
             other.gameObject.SetActive(false);
+            points++;
         }
 
         if (other.gameObject.CompareTag("Enemy")) {
@@ -120,4 +124,6 @@ public class PlayerController : MonoBehaviour
         rb.isKinematic = false;
         transform.position = transform.position;
     }
+
+    public int GetPoints() { return points; }
 }
