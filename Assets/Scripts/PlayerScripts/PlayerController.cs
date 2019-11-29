@@ -21,14 +21,20 @@ public class PlayerController : MonoBehaviour
     private float runningMultiplikator = 3.0f;
 
     Vector3 startPosition = new Vector3(0, 2, -20);
+
+    // constanst
+    private int MAX_HEALTH = 100;
+    private int MAX_JUMPS = 2;
+
     // private variables
     private int jumps = 2;
-    private int max_jumps = 2;
+    
     private Vector3 moveDirection = Vector3.zero;
     private bool running;
 
-
+    // player stats
     int points = 0;
+    int health = 100;
 
     // Start is called before the first frame update
     void Start()
@@ -58,7 +64,7 @@ public class PlayerController : MonoBehaviour
     void FixedUpdate()
     {
         // Jump
-        if (Input.GetKeyDown(KeyCode.Space) && ++jumps < max_jumps) Jump();
+        if (Input.GetKeyDown(KeyCode.Space) && ++jumps < MAX_JUMPS) Jump();
 
         // Dash
         if (Input.GetKeyDown(KeyCode.Tab)) Dash();
@@ -108,12 +114,22 @@ public class PlayerController : MonoBehaviour
 
         if (other.gameObject.CompareTag("Enemy")) {
             Debug.Log("Enemy collision");
-            Respawn();
+            //Respawn();
+            takeDamage(33);
         }
+    }
+
+    public void takeDamage(int damage) {
+        health -= damage;
+        if (health <= 0) Respawn();
     }
 
 
     private void Respawn() {
+
+        // TODO: Juicy animation
+
+        // reset position
         rb.velocity = Vector3.zero;
         rb.angularVelocity = Vector3.zero;
         rb.isKinematic = true;
@@ -123,7 +139,11 @@ public class PlayerController : MonoBehaviour
         // Re-enable the physics and set start position to that of the turret
         rb.isKinematic = false;
         transform.position = transform.position;
+
+        // reset health
+        health = MAX_HEALTH;
     }
 
     public int GetPoints() { return points; }
+    public int GetHealth() { return health; }
 }

@@ -11,8 +11,11 @@ public class UiController : MonoBehaviour
     Text scoreText;
     string s = "Score: ";
 
-
+    // stuff to display
     int points;
+    int health;
+    
+
     // Start is called before the first frame update
     void Start()
     {
@@ -23,7 +26,9 @@ public class UiController : MonoBehaviour
     {
         
         points = player.GetPoints();
-        scoreText.text = s + points.ToString();
+        health = player.GetHealth();
+        // display 
+        scoreText.text = "Score: " + points + ", health: " + health;
         Debug.Log(points);
     }
 }
