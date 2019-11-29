@@ -3,14 +3,14 @@
 ## Player
 
 - [x] Double jump
-  - [ ] **Fix that FixedUpdate() stizzle**
+  - [x] **Fix that FixedUpdate() stizzle**
 - [x] Walk & Sprint
   - [ ] **no can sprint while jump, only when a walk onna floor**
 - [x] Control direction during jump
 - [ ] Health & can die, Game over
   - [ ] Health
-  - [ ] Kill zone beneath level
-  - [ ] Respeawn
+  - [x] Kill zone beneath level
+  - [x] Respeawn
 - [ ] Interfaces which other objects can call
   - [ ] Heal (mein Führer)
   - [ ] Invincibility
@@ -28,7 +28,7 @@ Optional
 
 ## Collétables
 
-- [ ] PoC Collectable: Coin 
+- [x] PoC Collectable: Coin 
 - [ ] 3 fancy key to collect
 - [ ] permanent powerups: health potion
   - [ ] it shalleth check if player is at full health or nah
