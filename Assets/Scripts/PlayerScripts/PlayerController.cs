@@ -52,6 +52,9 @@ public class PlayerController : MonoBehaviour
         // Reset jumps if grounded
         if (IsGrounded()) jumps = 0;
 
+        // Jump
+        if (Input.GetKeyDown(KeyCode.Space) && ++jumps < MAX_JUMPS) Jump();
+
         // Check if we are running
         running = Input.GetKey(KeyCode.LeftShift) /*&& IsGrounded()*/;
         
@@ -63,9 +66,6 @@ public class PlayerController : MonoBehaviour
     // Everything to do with Rigidbody should be done here
     void FixedUpdate()
     {
-        // Jump
-        if (Input.GetKeyDown(KeyCode.Space) && ++jumps < MAX_JUMPS) Jump();
-
         // Dash
         if (Input.GetKeyDown(KeyCode.Tab)) Dash();
 
