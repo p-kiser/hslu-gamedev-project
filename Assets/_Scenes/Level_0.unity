@@ -197,6 +197,11 @@ PrefabInstance:
       propertyPath: m_LocalPosition.y
       value: 4
       objectReference: {fileID: 0}
+    - target: {fileID: 3412269562063587536, guid: 50af7ba0f048b4ae58654cb993c17274,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -5
+      objectReference: {fileID: 0}
     - target: {fileID: -8933149295533337618, guid: 50af7ba0f048b4ae58654cb993c17274,
         type: 3}
       propertyPath: speed
@@ -562,7 +567,7 @@ GameObject:
   - component: {fileID: 217671668}
   m_Layer: 0
   m_Name: Cube
-  m_TagString: Enemy
+  m_TagString: Deathzone
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -634,7 +639,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 217671667}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -106.871704, y: -10.7, z: -63.01419}
+  m_LocalPosition: {x: 4, y: -7.2, z: -63.01419}
   m_LocalScale: {x: 666, y: 1, z: 666}
   m_Children: []
   m_Father: {fileID: 0}
@@ -818,7 +823,7 @@ GameObject:
   - component: {fileID: 435110485}
   m_Layer: 0
   m_Name: Cube (2)
-  m_TagString: Enemy
+  m_TagString: Deathzone
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -890,7 +895,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 435110484}
   m_LocalRotation: {x: 0.7071068, y: 0, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: -106.871704, y: -10.7, z: 138}
+  m_LocalPosition: {x: 0, y: -10.7, z: 94.5}
   m_LocalScale: {x: 666, y: 1, z: 666}
   m_Children: []
   m_Father: {fileID: 0}
@@ -2103,7 +2108,7 @@ GameObject:
   - component: {fileID: 1990364968}
   m_Layer: 0
   m_Name: Cube (3)
-  m_TagString: Enemy
+  m_TagString: Deathzone
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2553,7 +2558,7 @@ PrefabInstance:
     - target: {fileID: 6813971667400825800, guid: 2752edb3cd01a4044a5f5227d7d247e8,
         type: 3}
       propertyPath: INTERVAL
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 2753125065137594434, guid: 2752edb3cd01a4044a5f5227d7d247e8,
         type: 3}
@@ -2587,7 +2592,7 @@ GameObject:
   - component: {fileID: 2105811704}
   m_Layer: 0
   m_Name: Cube (4)
-  m_TagString: Enemy
+  m_TagString: Deathzone
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2659,7 +2664,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2105811703}
   m_LocalRotation: {x: 0.7071068, y: 0, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: -106.871704, y: -10.7, z: -84}
+  m_LocalPosition: {x: 3, y: -10.7, z: -40}
   m_LocalScale: {x: 666, y: 1, z: 666}
   m_Children: []
   m_Father: {fileID: 0}
@@ -2679,7 +2684,7 @@ GameObject:
   - component: {fileID: 2128065485}
   m_Layer: 0
   m_Name: Cube (1)
-  m_TagString: Enemy
+  m_TagString: Deathzone
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2751,7 +2756,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2128065484}
   m_LocalRotation: {x: 0.5, y: 0.5, z: -0.5, w: 0.5}
-  m_LocalPosition: {x: -90.5, y: -10.7, z: 26}
+  m_LocalPosition: {x: -24, y: -10.7, z: 26}
   m_LocalScale: {x: 666, y: 1, z: 666}
   m_Children: []
   m_Father: {fileID: 0}

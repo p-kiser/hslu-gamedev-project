@@ -114,8 +114,12 @@ public class PlayerController : MonoBehaviour
 
         if (other.gameObject.CompareTag("Enemy")) {
             Debug.Log("Enemy collision");
-            //Respawn();
             takeDamage(33);
+        }
+
+        if (other.gameObject.CompareTag("Deathzone")) {
+            Debug.Log("You failed.");
+            Respawn();
         }
     }
 
