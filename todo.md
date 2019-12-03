@@ -12,7 +12,7 @@
   - [x] Kill zone beneath level
   - [x] Respeawn
 - [ ] Interfaces which other objects can call
-  - [ ] Heal (mein Führer)
+  - [ ] Heal
   - [ ] Invincibility
   - [ ] Damage dealt to the player
 - [ ] Can collect points & keys
@@ -58,6 +58,11 @@ Optional
 ## Juciness
 
 - [ ] Animations for jumping, collecting stuff, killing enemies, dying etc.
+  - [x] jumping
+  - [ ] landing
+  - [ ] get hit
+  - [ ] die
+  - [ ] running
 - [ ] Particle effects
 - [ ] Camera shake
 - [ ] collectibles must make the game lag
@@ -70,6 +75,10 @@ Optional
 - [ ] Ice Area
 - [ ] Swamp Area
 - [ ] 3 different ground materials (normal, slippery, slow)
+  - [x] normal
+  - [ ] slow
+  - [ ] slippery
+  - [ ] LAVA
 - [ ] Interaction with objects: boxes, trampolines (bitch), spikes
 - [ ] Different elevations, tunnels, stairs
 
