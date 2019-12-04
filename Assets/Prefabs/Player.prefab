@@ -175,11 +175,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 17e9fc7da2f20429992394540b37dc02, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 5
+  speed: 4
   jumpHeight: 2
   rotateSpeed: 3
   dashDistance: 10
-  runningMultiplikator: 3
+  runningMultiplikator: 1.5
 --- !u!1 &3412269561880838505
 GameObject:
   m_ObjectHideFlags: 0
