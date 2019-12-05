@@ -20,7 +20,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField]
     private float runningMultiplikator = 3.0f;
 
-    Vector3 startPosition = new Vector3(0, 2, -20);
+    Vector3 startPosition = new Vector3(0, 5, 0);
 
     // constanst
     private int MAX_HEALTH = 100;

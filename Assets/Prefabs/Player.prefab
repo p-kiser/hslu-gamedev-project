@@ -179,7 +179,7 @@ MonoBehaviour:
   jumpHeight: 2
   rotateSpeed: 3
   dashDistance: 10
-  runningMultiplikator: 3
+  runningMultiplikator: 2
 --- !u!1 &3412269561880838505
 GameObject:
   m_ObjectHideFlags: 0

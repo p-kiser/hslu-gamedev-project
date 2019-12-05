@@ -534,6 +534,33 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1651528886036309647, guid: 2792f58495c150544b62d373b11c9e3c,
+        type: 3}
+      propertyPath: m_Name
+      value: TeleporterPlatform
+      objectReference: {fileID: 0}
+    - target: {fileID: 5643285751279813235, guid: 2792f58495c150544b62d373b11c9e3c,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 1d70221454f1d4d4ebac64daecace623, type: 2}
+    - target: {fileID: 467167189448294718, guid: 2792f58495c150544b62d373b11c9e3c,
+        type: 3}
+      propertyPath: m_Material
+      value: 
+      objectReference: {fileID: 13400000, guid: f23416f13bb7b4c17b559ecce45a2e41,
+        type: 2}
+    - target: {fileID: 7566898296292862541, guid: 2792f58495c150544b62d373b11c9e3c,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 1d70221454f1d4d4ebac64daecace623, type: 2}
+    - target: {fileID: 7566898296292862540, guid: 2792f58495c150544b62d373b11c9e3c,
+        type: 3}
+      propertyPath: m_Material
+      value: 
+      objectReference: {fileID: 13400000, guid: f23416f13bb7b4c17b559ecce45a2e41,
+        type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2792f58495c150544b62d373b11c9e3c, type: 3}
 --- !u!4 &490808550 stripped
@@ -781,6 +808,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1651528886036309647, guid: 2792f58495c150544b62d373b11c9e3c,
+        type: 3}
+      propertyPath: m_Name
+      value: TeleporterPlatform
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2792f58495c150544b62d373b11c9e3c, type: 3}
 --- !u!1001 &1259564759
@@ -974,6 +1006,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1651528886036309647, guid: 2792f58495c150544b62d373b11c9e3c,
+        type: 3}
+      propertyPath: m_Name
+      value: TeleporterPlatform
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2792f58495c150544b62d373b11c9e3c, type: 3}
 --- !u!1001 &1435884718
@@ -983,11 +1020,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 3412269561825156285, guid: 50af7ba0f048b4ae58654cb993c17274,
-        type: 3}
-      propertyPath: m_Name
-      value: Player
-      objectReference: {fileID: 0}
     - target: {fileID: 3412269561825156280, guid: 50af7ba0f048b4ae58654cb993c17274,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1053,6 +1085,11 @@ PrefabInstance:
       propertyPath: m_LocalScale.x
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 3412269561825156285, guid: 50af7ba0f048b4ae58654cb993c17274,
+        type: 3}
+      propertyPath: m_Name
+      value: Player
+      objectReference: {fileID: 0}
     - target: {fileID: 3412269561880838506, guid: 50af7ba0f048b4ae58654cb993c17274,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1071,6 +1108,26 @@ PrefabInstance:
     - target: {fileID: 3412269561880838506, guid: 50af7ba0f048b4ae58654cb993c17274,
         type: 3}
       propertyPath: m_LocalScale.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3412269561825156287, guid: 50af7ba0f048b4ae58654cb993c17274,
+        type: 3}
+      propertyPath: m_AngularDrag
+      value: 0.05
+      objectReference: {fileID: 0}
+    - target: {fileID: 3412269561825156287, guid: 50af7ba0f048b4ae58654cb993c17274,
+        type: 3}
+      propertyPath: m_Drag
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3412269561825156287, guid: 50af7ba0f048b4ae58654cb993c17274,
+        type: 3}
+      propertyPath: m_IsKinematic
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3412269561825156287, guid: 50af7ba0f048b4ae58654cb993c17274,
+        type: 3}
+      propertyPath: m_UseGravity
       value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
