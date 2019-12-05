@@ -4,6 +4,14 @@ using UnityEngine;
 
 public class Rotator : MonoBehaviour
 {
+    [Tooltip("Rotation around the x-axis in degreés per seconds")]
+    [SerializeField]
+    private float x = 0;
+    [SerializeField]
+    private float y = 0;
+    [SerializeField]
+    private float z = 90;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -13,6 +21,6 @@ public class Rotator : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        transform.Rotate(new Vector3(0, 0, 88) * Time.deltaTime);
+        transform.Rotate(new Vector3(x, y, z) * Time.deltaTime);
     }
 }

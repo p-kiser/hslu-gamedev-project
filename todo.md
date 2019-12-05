@@ -16,6 +16,8 @@
   - [ ] Invincibility
   - [ ] Damage dealt to the player
 - [ ] Can collect points & keys
+- [ ] Spawnpoints
+
 
 Optional
 - [ ] Player can shoot
@@ -81,6 +83,7 @@ Optional
   - [ ] LAVA
 - [ ] Interaction with objects: boxes, trampolines (bitch), spikes
 - [ ] Different elevations, tunnels, stairs
+- [ ] Telieporteur
 
 Eventually optional
 
