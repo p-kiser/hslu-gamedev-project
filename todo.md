@@ -8,7 +8,7 @@
   - [ ] **no can sprint while jump, only when a walk onna floor**
 - [x] Control direction during jump
 - [ ] Health & can die, Game over
-  - [ ] Health
+  - [x] Health
   - [x] Kill zone beneath level
   - [x] Respeawn
 - [ ] Interfaces which other objects can call
@@ -17,7 +17,7 @@
   - [ ] Damage dealt to the player
 - [ ] Can collect points & keys
 - [ ] Spawnpoints
-
+- [ ] maek movement compliant wit physics
 
 Optional
 - [ ] Player can shoot
