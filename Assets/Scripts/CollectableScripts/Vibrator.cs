@@ -19,7 +19,7 @@ public class Vibrator : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        float shake = Mathf.Sin(Time.time * speed) * intensity;
+        float shake = Mathf.Sin(Time.time * speed) * intensity / 100;
         transform.position = startPosition + new Vector3(shake,shake,shake);
     }
 }

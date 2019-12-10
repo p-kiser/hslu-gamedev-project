@@ -6,6 +6,8 @@ public class Pulsator : MonoBehaviour
 {
     [SerializeField]
     private float frequency = 2;
+    [SerializeField]
+    private float intensity = 1;
 
     private Vector3 origSize;
 
@@ -22,6 +24,6 @@ public class Pulsator : MonoBehaviour
         float v = Mathf.Sin(Time.time * frequency);
         Vector3 vec = new Vector3(v,v,v);
 
-        transform.localScale = origSize + vec * 0.5f;
+        transform.localScale = origSize + vec * intensity/10;
     }
 }
