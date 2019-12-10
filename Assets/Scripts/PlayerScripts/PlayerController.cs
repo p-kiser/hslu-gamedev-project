@@ -74,7 +74,9 @@ public class PlayerController : MonoBehaviour
 
         // Appy movement to player
         moveDirection = moveDirection * speed * (running ? runningMultiplikator : 1);
-        rb.MovePosition(rb.position + moveDirection * Time.fixedDeltaTime);
+        //rb.MovePosition(rb.position + moveDirection * Time.fixedDeltaTime);
+        rb.AddForce(moveDirection * Time.fixedDeltaTime * 20   , ForceMode.Impulse);
+
     }
 
 
