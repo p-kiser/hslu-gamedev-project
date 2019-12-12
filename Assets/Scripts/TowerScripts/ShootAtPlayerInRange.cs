@@ -50,13 +50,13 @@ public class ShootAtPlayerInRange : MonoBehaviour
 
         if (target != null && distance <= distanceToPlayer)
         {
-            
+            /*
             timer += 1.0F * Time.deltaTime;
             if (timer >= INTERVAL) {
                 timer = 0.0f;
                 wait = !wait;
             }
-            
+            */
 
             if (!wait) {
                 // Reset the velocity and "pause" the physics
@@ -73,7 +73,7 @@ public class ShootAtPlayerInRange : MonoBehaviour
                 if (!shooted) {
                     Shoot(index);
                     index = ++index % MAX_PROJECTILES;
-                    //shooted = true;
+                    shooted = true;
                     Invoke("ToggleShooted", RATE_OF_FIRE);
                 } 
                 
