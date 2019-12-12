@@ -71,19 +71,19 @@ Optional
 
 ## Level design
 
-- [ ] Tutorial Area
-- [ ] Hub Area
-- [ ] Normal Area
-- [ ] Ice Area
-- [ ] Swamp Area
-- [ ] 3 different ground materials (normal, slippery, slow)
+- [x] Tutorial Area
+- [x] Hub Area
+- [x] Normal Area
+- [x] Ice Area
+- [x] Swamp Area
+- [x] 3 different ground materials (normal, slippery, slow)
   - [x] normal
-  - [ ] slow
-  - [ ] slippery
+  - [x] slow
+  - [x] slippery
   - [ ] LAVA
-- [ ] Interaction with objects: boxes, trampolines (bitch), spikes
-- [ ] Different elevations, tunnels, stairs
-- [ ] Telieporteur
+- [x] Interaction with objects: boxes, trampolines (bitch), spikes
+- [x] Different elevations, tunnels, stairs
+- [x] Telieporteur
 
 Eventually optional
 
