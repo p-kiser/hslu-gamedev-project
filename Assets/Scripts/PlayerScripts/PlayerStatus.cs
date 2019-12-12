@@ -4,10 +4,10 @@ using UnityEngine;
 
 public class PlayerStatus : MonoBehaviour
 {
-    
+
     private int MAX_HEALTH = 5;
     private int SPEED_UPGRADE = 5;
-    private int SPEED_UPGRADE_TIME = 5;
+    private float SPEED_UPGRADE_TIME = 5.0f;
     int points;
     int health;
     bool onCrack;
@@ -25,7 +25,7 @@ public class PlayerStatus : MonoBehaviour
 
         rb = GetComponent<Rigidbody>();
         startPosition = transform.position;
-        
+
 
     }
 
@@ -49,12 +49,13 @@ public class PlayerStatus : MonoBehaviour
         if (other.gameObject.CompareTag("HealthPotion")) {
             health++;
             other.gameObject.SetActive(false);
-            
+
         }
         if (other.gameObject.CompareTag("Amphetamine"))
         {
             onCrack = true;
             other.gameObject.SetActive(false);
+            Invoke("SoberUp", SPEED_UPGRADE_TIME);
         }
         // damage
         if (other.gameObject.CompareTag("Enemy"))
@@ -99,4 +100,5 @@ public class PlayerStatus : MonoBehaviour
     }
     public int SpeedUpgrade() { return onCrack ? SPEED_UPGRADE : 1; }
     public bool OnCrack() { return onCrack; }
+    private void SoberUp() { onCrack = false;  }
 }
