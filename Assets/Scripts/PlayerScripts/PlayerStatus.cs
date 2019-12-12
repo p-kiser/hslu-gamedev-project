@@ -6,7 +6,7 @@ public class PlayerStatus : MonoBehaviour
 {
 
     private int MAX_HEALTH = 5;
-    private int SPEED_UPGRADE = 5;
+    private int SPEED_UPGRADE = 2;
     private float SPEED_UPGRADE_TIME = 5.0f;
     int points;
     int health;
@@ -32,6 +32,7 @@ public class PlayerStatus : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (onCrack) { Shake(); }
 
     }
 
@@ -101,4 +102,9 @@ public class PlayerStatus : MonoBehaviour
     public int SpeedUpgrade() { return onCrack ? SPEED_UPGRADE : 1; }
     public bool OnCrack() { return onCrack; }
     private void SoberUp() { onCrack = false;  }
+    private void Shake() {
+        Vector3 pos = transform.position;
+        float shake = Mathf.Sin(Time.time * 100) * 50 / 100;
+        transform.position = pos + new Vector3(shake, shake, shake);
+    }
 }
