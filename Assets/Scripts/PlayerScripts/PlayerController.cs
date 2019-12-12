@@ -50,6 +50,9 @@ public class PlayerController : MonoBehaviour
         // Calculate movement direction
         moveDirection = new Vector3(Input.GetAxis("Horizontal"), 0, Input.GetAxis("Vertical"));
         moveDirection = transform.TransformDirection(moveDirection);
+
+        // Jumping
+        if (Input.GetKeyDown(KeyCode.Space) && ++jumps < MAX_JUMPS) Jump();
     }
 
     // Everything to do with Rigidbody should be done here
@@ -57,7 +60,6 @@ public class PlayerController : MonoBehaviour
     {
         // Dash
         if (Input.GetKeyDown(KeyCode.Tab)) Dash();
-        if (Input.GetKeyDown(KeyCode.Space) && ++jumps < MAX_JUMPS) Jump();
 
         // Apply rotation using mouse x value
         transform.Rotate(0, Input.GetAxis("Mouse X") * rotateSpeed, 0);
