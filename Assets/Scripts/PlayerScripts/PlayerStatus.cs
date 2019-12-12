@@ -74,6 +74,13 @@ public class PlayerStatus : MonoBehaviour
         }
     }
 
+    private void OnCollisionStay(Collision collision)
+    {
+        if (collision.gameObject.CompareTag("Spike")) {
+            TakeDamage(1);
+        }
+    }
+
     // score related stuff
     public int GetPoints() { return points; }
     public void AddPoint(int points) { this.points += points; }
