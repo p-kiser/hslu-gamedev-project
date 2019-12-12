@@ -14,6 +14,7 @@ public class UiController : MonoBehaviour
     // stuff to display
     int points;
     int health;
+    bool onCrack;
     
 
     // Start is called before the first frame update
@@ -24,10 +25,10 @@ public class UiController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
         points = player.GetPoints();
         health = player.GetHealth();
+        onCrack = player.OnCrack();
         // display 
-        scoreText.text = "Score: " + points + ", health: " + health;
+        scoreText.text = "Score: " + points + ", health: " + health + ", on crack: " + onCrack;
     }
 }

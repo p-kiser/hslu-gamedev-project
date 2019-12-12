@@ -98,4 +98,5 @@ public class PlayerStatus : MonoBehaviour
         if (health <= 0) Respawn();
     }
     public int SpeedUpgrade() { return onCrack ? SPEED_UPGRADE : 1; }
+    public bool OnCrack() { return onCrack; }
 }
