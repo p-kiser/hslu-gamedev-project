@@ -16,20 +16,20 @@ public class PlayerStatus : MonoBehaviour
     bool onSpeed = false;
     bool invincible = false;
 
-
     Rigidbody rb;
-    Vector3 startPosition;
+    ParticleSystem parti;
+    Vector3 initPos;
 
     // Start is called before the first frame update
     void Start()
     {
         points = 0;
-        health = 3;
+        health = MAX_HEALTH;
 
         rb = GetComponent<Rigidbody>();
-        startPosition = transform.position;
-
-
+        parti = GetComponent<ParticleSystem>();
+        parti.Stop();
+        initPos = transform.position;
     }
 
     // Update is called once per frame
@@ -40,13 +40,11 @@ public class PlayerStatus : MonoBehaviour
     }
 
     // collisions
-    void OnTriggerEnter(Collider other)
-    {
+    void OnTriggerEnter(Collider other) {
         Debug.Log(other.gameObject.tag);
 
         // collectables
-        if (other.gameObject.CompareTag("Coin"))
-        {
+        if (other.gameObject.CompareTag("Coin")) {
             points++;
             other.gameObject.SetActive(false);
         }
@@ -55,69 +53,77 @@ public class PlayerStatus : MonoBehaviour
             other.gameObject.SetActive(false);
 
         }
-        if (other.gameObject.CompareTag("SpeedPotion"))
-        {
+        if (other.gameObject.CompareTag("SpeedPotion")) {
             onSpeed = true;
             other.gameObject.SetActive(false);
             Invoke("SoberUp", SPEED_UPGRADE_TIME);
         }
-        if (other.gameObject.CompareTag("InvincibilityPotion"))
-        {
-            invincible = true;
+        if (other.gameObject.CompareTag("InvincibilityPotion")) {
+            BecomeImmortal();
             other.gameObject.SetActive(false);
             Invoke("BecomeMortal", INVINCIBILITY_TIME);
         }
         // damage
-        if (other.gameObject.CompareTag("Enemy"))
-        {
+        if (other.gameObject.CompareTag("Enemy")) {
             Debug.Log("Enemy collision");
             TakeDamage(1);
         }
-
-        if (other.gameObject.CompareTag("Deathzone"))
-        {
+        if (other.gameObject.CompareTag("Deathzone")) {
             Debug.Log("You failed.");
             Respawn();
         }
     }
 
-    // helper functions
+    // score related stuff
     public int GetPoints() { return points; }
     public void AddPoint(int points) { this.points += points; }
-    private void Respawn() {
 
-        // TODO: Juicy animation
-
-        // reset position etc.
-        rb.velocity = Vector3.zero;
-        rb.angularVelocity = Vector3.zero;
-        rb.isKinematic = true;
-        transform.position = startPosition;
-        transform.rotation = Quaternion.identity;
-        // Re-enable the physics and set start position to that of the turret
-        rb.isKinematic = false;
-        //transform.position = transform.position;
-
-        // reset health
-        health = MAX_HEALTH;
-    }
+    // health related stuff
     public int GetHealth() { return health; }
-    public void TakeDamage(int damage)
-    {
+    public void TakeDamage(int damage) {
         health -= damage * GetDamageMultiplicator();
         if (health <= 0) Respawn();
     }
+
+    private void Respawn() {
+        // TODO: Juicy animation
+        rb.velocity = rb.angularVelocity = Vector3.zero;
+        rb.isKinematic = true;
+        transform.position = initPos;
+        transform.rotation = Quaternion.identity;
+        rb.isKinematic = false;
+        health = MAX_HEALTH;
+        ResetStatus();
+    }
+
+    // power up
     public int GetSpeedMultiplicator() { return onSpeed ? SPEED_UPGRADE : 1; }
     public bool IsOnSpeed() { return onSpeed; }
     private void SoberUp() { onSpeed = false;  }
 
     public bool IsInvincible() { return invincible;  }
-    private void BecomeMortal() { invincible = false;  }
+
+    private void BecomeImmortal() {
+        invincible = true;
+        parti.Play();
+        
+    }
+    private void BecomeMortal() {
+        invincible = false;
+        parti.Stop();
+    }
     public int GetDamageMultiplicator() { return invincible ? 0 : 1;  }
 
+    // special effects
     private void Shake() {
         Vector3 pos = transform.position;
         float shake = Mathf.Sin(Time.time * 100) * 0.1f;
         transform.position = pos + new Vector3(shake, shake, shake);
+    }
+
+    private void ResetStatus() {
+        BecomeMortal();
+        SoberUp();
+
     }
 }
