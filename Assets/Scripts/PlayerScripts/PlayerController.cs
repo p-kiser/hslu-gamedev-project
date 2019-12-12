@@ -63,7 +63,7 @@ public class PlayerController : MonoBehaviour
         transform.Rotate(0, Input.GetAxis("Mouse X") * rotateSpeed, 0);
 
         // Appy movement to player
-        moveDirection = moveDirection * speed * (running ? runningMultiplikator : 1) * st.SpeedUpgrade();
+        moveDirection = moveDirection * speed * (running ? runningMultiplikator : 1) * st.GetSpeedMultiplicator();
         rb.AddForce(moveDirection * Time.fixedDeltaTime * 30, ForceMode.Impulse);
 
     }

@@ -325,8 +325,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3d71c020123b14d68970332948e365f0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  frequency: 2
-  intensity: 0.5
+  frequency: 5
+  intensity: 0.6
 --- !u!136 &-5230334850813852226
 CapsuleCollider:
   m_ObjectHideFlags: 0

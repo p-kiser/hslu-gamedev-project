@@ -9,6 +9,8 @@ TagManager:
   - Deathzone
   - HealthPotion
   - Amphetamine
+  - SpeedPotion
+  - InvincibilityPotion
   layers:
   - Default
   - TransparentFX

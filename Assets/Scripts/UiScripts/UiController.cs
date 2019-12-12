@@ -14,7 +14,8 @@ public class UiController : MonoBehaviour
     // stuff to display
     int points;
     int health;
-    bool onCrack;
+    bool onSpeed;
+    bool invincible;
     
 
     // Start is called before the first frame update
@@ -27,8 +28,10 @@ public class UiController : MonoBehaviour
     {
         points = player.GetPoints();
         health = player.GetHealth();
-        onCrack = player.OnCrack();
+        onSpeed = player.IsOnSpeed();
+        invincible = player.IsInvincible();
+
         // display 
-        scoreText.text = "Score: " + points + ", health: " + health + ", on crack: " + onCrack;
+        scoreText.text = "score: " + points + " | health: " + health + " | speedUgrade: " + onSpeed + " | invincible: " + invincible;
     }
 }

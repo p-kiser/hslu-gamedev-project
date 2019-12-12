@@ -8,9 +8,14 @@ public class PlayerStatus : MonoBehaviour
     private int MAX_HEALTH = 5;
     private int SPEED_UPGRADE = 2;
     private float SPEED_UPGRADE_TIME = 5.0f;
+    private float INVINCIBILITY_TIME = 10.0f;
+
     int points;
     int health;
-    bool onCrack;
+
+    bool onSpeed = false;
+    bool invincible = false;
+
 
     Rigidbody rb;
     Vector3 startPosition;
@@ -21,8 +26,6 @@ public class PlayerStatus : MonoBehaviour
         points = 0;
         health = 3;
 
-        onCrack = false;
-
         rb = GetComponent<Rigidbody>();
         startPosition = transform.position;
 
@@ -32,7 +35,7 @@ public class PlayerStatus : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (onCrack) { Shake(); }
+        if (onSpeed) { Shake(); }
 
     }
 
@@ -52,11 +55,17 @@ public class PlayerStatus : MonoBehaviour
             other.gameObject.SetActive(false);
 
         }
-        if (other.gameObject.CompareTag("Amphetamine"))
+        if (other.gameObject.CompareTag("SpeedPotion"))
         {
-            onCrack = true;
+            onSpeed = true;
             other.gameObject.SetActive(false);
             Invoke("SoberUp", SPEED_UPGRADE_TIME);
+        }
+        if (other.gameObject.CompareTag("InvincibilityPotion"))
+        {
+            invincible = true;
+            other.gameObject.SetActive(false);
+            Invoke("BecomeMortal", INVINCIBILITY_TIME);
         }
         // damage
         if (other.gameObject.CompareTag("Enemy"))
@@ -79,16 +88,15 @@ public class PlayerStatus : MonoBehaviour
 
         // TODO: Juicy animation
 
-        // reset position
+        // reset position etc.
         rb.velocity = Vector3.zero;
         rb.angularVelocity = Vector3.zero;
         rb.isKinematic = true;
-        // Do positioning, etc
         transform.position = startPosition;
         transform.rotation = Quaternion.identity;
         // Re-enable the physics and set start position to that of the turret
         rb.isKinematic = false;
-        transform.position = transform.position;
+        //transform.position = transform.position;
 
         // reset health
         health = MAX_HEALTH;
@@ -96,15 +104,20 @@ public class PlayerStatus : MonoBehaviour
     public int GetHealth() { return health; }
     public void TakeDamage(int damage)
     {
-        health -= damage;
+        health -= damage * GetDamageMultiplicator();
         if (health <= 0) Respawn();
     }
-    public int SpeedUpgrade() { return onCrack ? SPEED_UPGRADE : 1; }
-    public bool OnCrack() { return onCrack; }
-    private void SoberUp() { onCrack = false;  }
+    public int GetSpeedMultiplicator() { return onSpeed ? SPEED_UPGRADE : 1; }
+    public bool IsOnSpeed() { return onSpeed; }
+    private void SoberUp() { onSpeed = false;  }
+
+    public bool IsInvincible() { return invincible;  }
+    private void BecomeMortal() { invincible = false;  }
+    public int GetDamageMultiplicator() { return invincible ? 0 : 1;  }
+
     private void Shake() {
         Vector3 pos = transform.position;
-        float shake = Mathf.Sin(Time.time * 100) * 50 / 100;
+        float shake = Mathf.Sin(Time.time * 100) * 0.1f;
         transform.position = pos + new Vector3(shake, shake, shake);
     }
 }
