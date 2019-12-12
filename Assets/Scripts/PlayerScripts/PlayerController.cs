@@ -21,6 +21,10 @@ public class PlayerController : MonoBehaviour
     [SerializeField]
     private float runningMultiplikator = 3.0f;
 
+    //Vector3 startPosition = new Vector3(-510, 52, 0);
+    Vector3 startPosition = new Vector3(-132, -20, 0);
+
+    // constanst
     private int MAX_JUMPS = 2;
     private int jumps = 2;
     private Vector3 moveDirection = Vector3.zero;
