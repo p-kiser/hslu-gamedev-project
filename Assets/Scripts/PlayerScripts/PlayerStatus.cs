@@ -63,6 +63,11 @@ public class PlayerStatus : MonoBehaviour
             other.gameObject.SetActive(false);
             Invoke("BecomeMortal", INVINCIBILITY_TIME);
         }
+
+        // key
+        if (other.gameObject.CompareTag("Key")) {
+            other.gameObject.SetActive(false);
+        }
         // damage
         if (other.gameObject.CompareTag("Enemy")) {
             Debug.Log("Enemy collision");
