@@ -53,13 +53,14 @@ public class PlayerController : MonoBehaviour
 
         // Jumping
         if (Input.GetKeyDown(KeyCode.Space) && ++jumps < MAX_JUMPS) Jump();
+
+        // Dash
+        if (Input.GetKeyDown(KeyCode.Tab)) Dash();
     }
 
     // Everything to do with Rigidbody should be done here
     void FixedUpdate()
     {
-        // Dash
-        if (Input.GetKeyDown(KeyCode.Tab)) Dash();
 
         // Apply rotation using mouse x value
         transform.Rotate(0, Input.GetAxis("Mouse X") * rotateSpeed, 0);
