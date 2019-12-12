@@ -5,18 +5,23 @@ using UnityEngine;
 public class PlayerStatus : MonoBehaviour
 {
     
-    private int MAX_HEALTH = 100;
+    private int MAX_HEALTH = 5;
+    private int SPEED_UPGRADE = 5;
+    private int SPEED_UPGRADE_TIME = 5;
     int points;
     int health;
+    bool onCrack;
 
     Rigidbody rb;
-    new Vector3 startPosition;
+    Vector3 startPosition;
 
     // Start is called before the first frame update
     void Start()
     {
         points = 0;
         health = 3;
+
+        onCrack = false;
 
         rb = GetComponent<Rigidbody>();
         startPosition = transform.position;
@@ -40,14 +45,15 @@ public class PlayerStatus : MonoBehaviour
         {
             points++;
             other.gameObject.SetActive(false);
-            points++;
         }
         if (other.gameObject.CompareTag("HealthPotion")) {
             health++;
             other.gameObject.SetActive(false);
             
         }
-        if (other.gameObject.CompareTag("Amphetamine")) {
+        if (other.gameObject.CompareTag("Amphetamine"))
+        {
+            onCrack = true;
             other.gameObject.SetActive(false);
         }
         // damage
@@ -91,4 +97,5 @@ public class PlayerStatus : MonoBehaviour
         health -= damage;
         if (health <= 0) Respawn();
     }
+    public int SpeedUpgrade() { return onCrack ? SPEED_UPGRADE : 1; }
 }

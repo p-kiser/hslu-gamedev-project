@@ -7,8 +7,9 @@ public class PlayerController : MonoBehaviour
     // Components
     Rigidbody rb;
     Animator anim;
+    PlayerStatus st;
 
-    // Serialized Fields
+    // Serialized Fields for maximum tweakability
     [SerializeField]
     private float speed = 8.0f;
     [SerializeField]
@@ -20,18 +21,10 @@ public class PlayerController : MonoBehaviour
     [SerializeField]
     private float runningMultiplikator = 3.0f;
 
-
     private int MAX_JUMPS = 2;
-
-    // private variables
     private int jumps = 2;
-    
     private Vector3 moveDirection = Vector3.zero;
     private bool running;
-
-    // player stats
-
-    int health = 100;
 
     // Start is called before the first frame update
     void Start()
@@ -39,21 +32,18 @@ public class PlayerController : MonoBehaviour
         // Get Components
         rb = GetComponent<Rigidbody>();
         anim = GetComponent<Animator>();
+        st = GetComponent<PlayerStatus>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        // Reset jumps if grounded
         if (IsGrounded()) jumps = 0;
 
-        // Jump
-        if (Input.GetKeyDown(KeyCode.Space) && ++jumps < MAX_JUMPS) Jump();
-
-        // Check if we are running
-        running = Input.GetKey(KeyCode.LeftShift) /*&& IsGrounded()*/;
+        // Check Inputs
+        running = Input.GetKey(KeyCode.LeftShift);
         
-        // Calculate movement direction from inputs
+        // Calculate movement direction
         moveDirection = new Vector3(Input.GetAxis("Horizontal"), 0, Input.GetAxis("Vertical"));
         moveDirection = transform.TransformDirection(moveDirection);
     }
@@ -63,13 +53,13 @@ public class PlayerController : MonoBehaviour
     {
         // Dash
         if (Input.GetKeyDown(KeyCode.Tab)) Dash();
+        if (Input.GetKeyDown(KeyCode.Space) && ++jumps < MAX_JUMPS) Jump();
 
         // Apply rotation using mouse x value
         transform.Rotate(0, Input.GetAxis("Mouse X") * rotateSpeed, 0);
 
         // Appy movement to player
-        moveDirection = moveDirection * speed * (running ? runningMultiplikator : 1);
-        //rb.MovePosition(rb.position + moveDirection * Time.fixedDeltaTime);
+        moveDirection = moveDirection * speed * (running ? runningMultiplikator : 1 + st.SpeedUpgrade());
         rb.AddForce(moveDirection * Time.fixedDeltaTime * 30, ForceMode.Impulse);
 
     }
@@ -91,12 +81,11 @@ public class PlayerController : MonoBehaviour
     }
 
     private void Dash() {
-        Debug.Log("Dash");
-
-        // even more advanced mathemagical calculations
+        
         float x = Mathf.Log(1f / (Time.deltaTime * rb.drag + 1)) / -Time.deltaTime;
         float y = 0.0f;
-        float z = Mathf.Log(1f / (Time.deltaTime * rb.drag + 1)) / -Time.deltaTime;
+        float z = x;
+
         Vector3 dashVelocity = Vector3.Scale(transform.forward, dashDistance * new Vector3(x, y, z));
         rb.AddForce(dashVelocity, ForceMode.VelocityChange);
     }

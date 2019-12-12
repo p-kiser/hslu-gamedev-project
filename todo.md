@@ -17,7 +17,7 @@
   - [ ] Damage dealt to the player
 - [ ] Can collect points & keys
 - [ ] Spawnpoints
-- [ ] maek movement compliant wit physics
+- [x] maek movement compliant wit physics
 
 Optional
 - [ ] Player can shoot
@@ -32,7 +32,7 @@ Optional
 
 - [x] PoC Collectable: Coin 
 - [ ] 3 fancy key to collect
-- [ ] permanent powerups: health potion
+- [x] permanent powerups: health potion
   - [ ] it shalleth check if player is at full health or nah
   - [ ] fancy hearty particle system
 - [ ] temporary powerups: (movment speed upgrade || jumping skill) && invicibility
