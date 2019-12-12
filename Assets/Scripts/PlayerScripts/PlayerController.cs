@@ -20,10 +20,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField]
     private float runningMultiplikator = 3.0f;
 
-    Vector3 startPosition = new Vector3(0, 5, 0);
 
-    // constanst
-    private int MAX_HEALTH = 100;
     private int MAX_JUMPS = 2;
 
     // private variables
@@ -33,7 +30,7 @@ public class PlayerController : MonoBehaviour
     private bool running;
 
     // player stats
-    int points = 0;
+
     int health = 100;
 
     // Start is called before the first frame update
@@ -42,8 +39,6 @@ public class PlayerController : MonoBehaviour
         // Get Components
         rb = GetComponent<Rigidbody>();
         anim = GetComponent<Animator>();
-
-        Respawn();
     }
 
     // Update is called once per frame
@@ -105,51 +100,4 @@ public class PlayerController : MonoBehaviour
         Vector3 dashVelocity = Vector3.Scale(transform.forward, dashDistance * new Vector3(x, y, z));
         rb.AddForce(dashVelocity, ForceMode.VelocityChange);
     }
-
-    void OnTriggerEnter(Collider other)
-    {
-        if (other.gameObject.CompareTag("Coin"))
-        {
-            other.gameObject.SetActive(false);
-            points++;
-        }
-
-        if (other.gameObject.CompareTag("Enemy")) {
-            Debug.Log("Enemy collision");
-            takeDamage(33);
-        }
-
-        if (other.gameObject.CompareTag("Deathzone")) {
-            Debug.Log("You failed.");
-            Respawn();
-        }
-    }
-
-    public void takeDamage(int damage) {
-        health -= damage;
-        if (health <= 0) Respawn();
-    }
-
-
-    private void Respawn() {
-
-        // TODO: Juicy animation
-
-        // reset position
-        rb.velocity = Vector3.zero;
-        rb.angularVelocity = Vector3.zero;
-        rb.isKinematic = true;
-        // Do positioning, etc
-        transform.position = startPosition;
-        transform.rotation = Quaternion.identity;
-        // Re-enable the physics and set start position to that of the turret
-        rb.isKinematic = false;
-        transform.position = transform.position;
-
-        // reset health
-        health = MAX_HEALTH;
-    }
-
-    public int GetPoints() { return points; }
-    public int GetHealth() { return health; }
 }

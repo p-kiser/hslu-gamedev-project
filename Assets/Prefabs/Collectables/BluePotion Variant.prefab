@@ -14,6 +14,22 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 100
   intensity: 2
+--- !u!70 &9207208279464748603
+CapsuleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9084981698380948361}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -0.06760287, y: 0.2620237}
+  m_Size: {x: 0.63520575, y: 1.5240474}
+  m_Direction: 0
 --- !u!1001 &4689188630507319957
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -25,6 +41,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: BluePotion Variant
+      objectReference: {fileID: 0}
+    - target: {fileID: 4541614758261657884, guid: 3e49da39010eb4153913058d26d00ddf,
+        type: 3}
+      propertyPath: m_TagString
+      value: Amphetamine
       objectReference: {fileID: 0}
     - target: {fileID: 4541614758261657885, guid: 3e49da39010eb4153913058d26d00ddf,
         type: 3}
@@ -81,16 +102,61 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4541614757796092179, guid: 3e49da39010eb4153913058d26d00ddf,
+        type: 3}
+      propertyPath: m_TagString
+      value: Amphetamine
+      objectReference: {fileID: 0}
     - target: {fileID: 4541614757796092182, guid: 3e49da39010eb4153913058d26d00ddf,
         type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: effde815c6814480ca2602201a1b3c4d, type: 2}
+    - target: {fileID: 4541614757796092181, guid: 3e49da39010eb4153913058d26d00ddf,
+        type: 3}
+      propertyPath: m_IsTrigger
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4541614757796092181, guid: 3e49da39010eb4153913058d26d00ddf,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4541614757444323706, guid: 3e49da39010eb4153913058d26d00ddf,
+        type: 3}
+      propertyPath: m_TagString
+      value: Amphetamine
+      objectReference: {fileID: 0}
     - target: {fileID: 4541614757444323709, guid: 3e49da39010eb4153913058d26d00ddf,
         type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: effde815c6814480ca2602201a1b3c4d, type: 2}
+    - target: {fileID: 4541614757444323708, guid: 3e49da39010eb4153913058d26d00ddf,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4541614757444323708, guid: 3e49da39010eb4153913058d26d00ddf,
+        type: 3}
+      propertyPath: m_IsTrigger
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4541614757132915229, guid: 3e49da39010eb4153913058d26d00ddf,
+        type: 3}
+      propertyPath: m_TagString
+      value: Amphetamine
+      objectReference: {fileID: 0}
+    - target: {fileID: 4541614757132915231, guid: 3e49da39010eb4153913058d26d00ddf,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4541614757132915231, guid: 3e49da39010eb4153913058d26d00ddf,
+        type: 3}
+      propertyPath: m_IsTrigger
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3e49da39010eb4153913058d26d00ddf, type: 3}
 --- !u!1 &9084981698380948361 stripped

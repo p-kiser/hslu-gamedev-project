@@ -7,6 +7,8 @@ TagManager:
   - Coin
   - Enemy
   - Deathzone
+  - HealthPotion
+  - Amphetamine
   layers:
   - Default
   - TransparentFX

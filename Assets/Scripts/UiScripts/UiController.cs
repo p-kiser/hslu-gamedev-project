@@ -6,7 +6,7 @@ using UnityEngine.UI;
 public class UiController : MonoBehaviour
 {
     [SerializeField]
-    PlayerController player;
+    PlayerStatus player;
     [SerializeField]
     Text scoreText;
     string s = "Score: ";
@@ -29,6 +29,5 @@ public class UiController : MonoBehaviour
         health = player.GetHealth();
         // display 
         scoreText.text = "Score: " + points + ", health: " + health;
-        Debug.Log(points);
     }
 }

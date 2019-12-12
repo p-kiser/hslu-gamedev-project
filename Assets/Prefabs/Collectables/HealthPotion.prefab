@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 4541614757132915231}
   m_Layer: 0
   m_Name: "Z\xE4pfle"
-  m_TagString: Untagged
+  m_TagString: HealthPotion
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -87,8 +87,8 @@ CapsuleCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4541614757132915229}
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
+  m_IsTrigger: 0
+  m_Enabled: 0
   m_Radius: 0.5000001
   m_Height: 2
   m_Direction: 1
@@ -107,7 +107,7 @@ GameObject:
   - component: {fileID: 4541614757444323708}
   m_Layer: 0
   m_Name: Flaschenhals
-  m_TagString: Untagged
+  m_TagString: HealthPotion
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -180,8 +180,8 @@ CapsuleCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4541614757444323706}
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
+  m_IsTrigger: 0
+  m_Enabled: 0
   m_Radius: 0.5000001
   m_Height: 2
   m_Direction: 1
@@ -200,7 +200,7 @@ GameObject:
   - component: {fileID: 4541614757796092181}
   m_Layer: 0
   m_Name: Sphere
-  m_TagString: Untagged
+  m_TagString: HealthPotion
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -273,8 +273,8 @@ SphereCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4541614757796092179}
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
+  m_IsTrigger: 0
+  m_Enabled: 0
   serializedVersion: 2
   m_Radius: 0.5
   m_Center: {x: 0, y: 0, z: 0}
@@ -288,9 +288,10 @@ GameObject:
   m_Component:
   - component: {fileID: 4541614758261657885}
   - component: {fileID: 7065030747726350553}
+  - component: {fileID: -5230334850813852226}
   m_Layer: 0
   m_Name: HealthPotion
-  m_TagString: Untagged
+  m_TagString: HealthPotion
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -326,3 +327,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   frequency: 2
   intensity: 0.5
+--- !u!136 &-5230334850813852226
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4541614758261657884}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  m_Radius: 0.5
+  m_Height: 1
+  m_Direction: 1
+  m_Center: {x: 0, y: 0, z: 0}
