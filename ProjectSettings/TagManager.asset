@@ -12,6 +12,7 @@ TagManager:
   - SpeedPotion
   - InvincibilityPotion
   - Spike
+  - Key
   layers:
   - Default
   - TransparentFX
