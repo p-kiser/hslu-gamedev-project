@@ -129,7 +129,7 @@ public class PlayerStatus : MonoBehaviour
     // special effects
     private void Shake() {
         Vector3 pos = transform.position;
-        float shake = Mathf.Sin(Time.time * 100) * 0.1f;
+        float shake = Mathf.Sin(Time.time * 100) * 0.05f;
         transform.position = pos + new Vector3(shake, shake, shake);
     }
 
