@@ -13,11 +13,9 @@ public class ExplodeOnCollision : MonoBehaviour
     [SerializeField]
     private float timeToDetonation = 1.0f;
 
-    AudioSource deathSound;
-
     private void Start()
     {
-        deathSound = GetComponent<AudioSource>();           
+        
     }
 
     private void OnCollisionEnter(Collision collision)
@@ -40,7 +38,6 @@ public class ExplodeOnCollision : MonoBehaviour
                 Debug.Log("Hit a rigidbody");
                 rb.AddExplosionForce(power, explosionPosition, radius, upForce, ForceMode.Impulse);
                 Debug.Log("Bomb exploded and dies now, RIP");
-                deathSound.Play(0);
                 GameObject.Destroy(gameObject);
             }
         }

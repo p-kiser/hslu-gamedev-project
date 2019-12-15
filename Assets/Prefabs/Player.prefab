@@ -178,7 +178,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 17e9fc7da2f20429992394540b37dc02, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 5
+  speed: 6
   jumpHeight: 2
   rotateSpeed: 3
   dashDistance: 10
@@ -197,6 +197,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   startingPosition: {fileID: 3315024012976350903, guid: 52f857df6a402734da1bee4ccaf0d1e8,
     type: 3}
+  RespawnPosition: {fileID: 0}
 --- !u!198 &8874972825173151712
 ParticleSystem:
   m_ObjectHideFlags: 0
