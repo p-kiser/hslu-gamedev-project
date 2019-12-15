@@ -13,6 +13,7 @@ TagManager:
   - InvincibilityPotion
   - Spike
   - Key
+  - EnemyBig
   layers:
   - Default
   - TransparentFX

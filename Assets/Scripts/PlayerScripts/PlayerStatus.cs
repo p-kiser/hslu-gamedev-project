@@ -99,6 +99,11 @@ public class PlayerStatus : MonoBehaviour
         {
             TakeDamage(1);
         }
+
+        if (collision.gameObject.CompareTag("EnemyBig"))
+        {
+            TakeDamage(2);
+        }
     }
 
     // score related stuff

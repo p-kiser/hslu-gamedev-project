@@ -75,7 +75,7 @@ GameObject:
   - component: {fileID: 5144754966220217002}
   - component: {fileID: 4167288949103052384}
   m_Layer: 0
-  m_Name: BombOne
+  m_Name: SmallBomb
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -217,7 +217,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 55c77b7b06f486e4ba595d7f72a956ae, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  power: 333
+  power: 111
   radius: 50
   upForce: 1
   timeToDetonation: 0
