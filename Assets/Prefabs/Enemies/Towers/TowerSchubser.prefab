@@ -13,9 +13,8 @@ GameObject:
   - component: {fileID: 2753125065137594434}
   - component: {fileID: 4654696426665962976}
   - component: {fileID: 5155508671453041929}
-  - component: {fileID: 6992763094953264022}
   m_Layer: 0
-  m_Name: TowerOne
+  m_Name: TowerSchubser
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -30,12 +29,12 @@ Transform:
   m_GameObject: {fileID: 5262382798401455546}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 2.8321521, y: 2.8321521, z: 2.8321521}
+  m_LocalScale: {x: 3, y: 3, z: 3}
   m_Children:
   - {fileID: 5641798556427457565}
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
 --- !u!33 &8629722149779636293
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -95,8 +94,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   target: {fileID: 3412269561825156280, guid: 50af7ba0f048b4ae58654cb993c17274, type: 3}
-  speed: 5
-  distanceToPlayer: 20
+  speed: 7
+  distanceToPlayer: 40
 --- !u!135 &5155508671453041929
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -110,21 +109,6 @@ SphereCollider:
   serializedVersion: 2
   m_Radius: 0.5
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &6992763094953264022
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5262382798401455546}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b2e62340f1c0d48ce9f81445dcbef839, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  target: {fileID: 3412269561825156280, guid: 50af7ba0f048b4ae58654cb993c17274, type: 3}
-  speed: 5
-  distanceToPlayer: 20
 --- !u!1 &6578548863586520433
 GameObject:
   m_ObjectHideFlags: 0
@@ -218,8 +202,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   target: {fileID: 3412269561825156280, guid: 50af7ba0f048b4ae58654cb993c17274, type: 3}
   bullet: {fileID: 5411225361963520354, guid: d6ba5fc6551e1314389e37cd0fe8abbf, type: 3}
-  bulletSpeed: 25
-  distanceToPlayer: 40
-  MAX_PROJECTILES: 127
-  RATE_OF_FIRE: 0.125
-  INTERVAL: 1
+  bulletSpeed: 4
+  distanceToPlayer: 30
+  MAX_PROJECTILES: 50
+  RATE_OF_FIRE: 0.05
+  INTERVAL: 1.5
