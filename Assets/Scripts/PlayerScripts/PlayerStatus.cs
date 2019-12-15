@@ -93,6 +93,14 @@ public class PlayerStatus : MonoBehaviour
         }
     }
 
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.CompareTag("Enemy"))
+        {
+            TakeDamage(1);
+        }
+    }
+
     // score related stuff
     public int GetPoints() { return points; }
     public void AddPoint(int points) { this.points += points; }
