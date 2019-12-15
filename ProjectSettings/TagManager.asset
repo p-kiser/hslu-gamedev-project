@@ -16,6 +16,7 @@ TagManager:
   - EnemyBig
   - KilledEnemyReward
   - KilledBigEnemyReward
+  - SpecialCoin
   layers:
   - Default
   - TransparentFX

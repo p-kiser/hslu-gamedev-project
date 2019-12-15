@@ -12,9 +12,11 @@ public class KillAgentEnemy : MonoBehaviour
         Debug.Log(other.gameObject.tag);
         if (other.gameObject.CompareTag("Player"))
         {
+            
             Debug.Log("DAMN you killed that enemy hard!");
             GameObject.Destroy(transform.parent.gameObject);
             other.attachedRigidbody.AddForce(Vector3.up * bounceUpForce, ForceMode.Impulse);
+            
         }
     }
 }

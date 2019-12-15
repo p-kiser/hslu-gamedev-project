@@ -79,8 +79,6 @@ public class PlayerController : MonoBehaviour
     }
 
     private void Jump() {
-        Debug.Log("Jumps: " + jumps);
-
         // advanced mathemagics:
         float y = Mathf.Sqrt(jumpHeight * -2f * Physics.gravity.y);
         rb.AddForce(Vector3.up * y, ForceMode.VelocityChange);
