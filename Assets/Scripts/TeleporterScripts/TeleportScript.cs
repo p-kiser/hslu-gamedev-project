@@ -25,6 +25,7 @@ public class TeleportScript : MonoBehaviour
         if (playerRb != null)
         {
             playerRb.transform.position = Destination.transform.position;
+            playerRb.transform.rotation = Destination.transform.rotation;
         }
     }
 }

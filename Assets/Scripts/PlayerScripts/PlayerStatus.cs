@@ -20,6 +20,9 @@ public class PlayerStatus : MonoBehaviour
     ParticleSystem parti;
     Vector3 initPos;
 
+    [SerializeField]
+    private Transform startingPosition;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -29,7 +32,11 @@ public class PlayerStatus : MonoBehaviour
         rb = GetComponent<Rigidbody>();
         parti = GetComponent<ParticleSystem>();
         parti.Stop();
-        initPos = transform.position;
+        // Move and rotate the Player to the start of the level
+        transform.position = startingPosition.position;
+        transform.rotation = startingPosition.rotation;
+        // Set the start of the level as spawn point
+        initPos = startingPosition.position;
     }
 
     // Update is called once per frame
