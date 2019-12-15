@@ -84,6 +84,18 @@ public class PlayerStatus : MonoBehaviour
             Debug.Log("You failed.");
             Respawn();
         }
+
+        // reward for killing enemies
+        if (other.gameObject.CompareTag("KilledEnemyReward"))
+        {
+            points += 2;
+        }
+
+        if (other.gameObject.CompareTag("KilledBigEnemyReward"))
+        {
+            points += 6;
+        }
+
     }
 
     private void OnCollisionStay(Collision collision)
