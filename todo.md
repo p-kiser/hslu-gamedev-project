@@ -16,7 +16,7 @@
   - [ ] Invincibility
   - [ ] Damage dealt to the player
 - [ ] Can collect points & keys
-- [ ] Spawnpoints
+- [X] Spawnpoints
 - [x] maek movement compliant wit physics
 
 Optional
@@ -80,7 +80,6 @@ Optional
   - [x] normal
   - [x] slow
   - [x] slippery
-  - [ ] LAVA
 - [x] Interaction with objects: boxes, trampolines (bitch), spikes
 - [x] Different elevations, tunnels, stairs
 - [x] Telieporteur
