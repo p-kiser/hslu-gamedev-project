@@ -18,10 +18,10 @@ public class PlayerStatus : MonoBehaviour
 
     Rigidbody rb;
     ParticleSystem parti;
-    Vector3 initPos;
 
     [SerializeField]
     private Transform startingPosition;
+    public Transform RespawnPosition;
 
     // Start is called before the first frame update
     void Start()
@@ -36,7 +36,7 @@ public class PlayerStatus : MonoBehaviour
         transform.position = startingPosition.position;
         transform.rotation = startingPosition.rotation;
         // Set the start of the level as spawn point
-        initPos = startingPosition.position;
+        RespawnPosition = startingPosition;
     }
 
     // Update is called once per frame
@@ -108,8 +108,10 @@ public class PlayerStatus : MonoBehaviour
         // TODO: Juicy animation
         rb.velocity = rb.angularVelocity = Vector3.zero;
         rb.isKinematic = true;
-        transform.position = initPos;
-        transform.rotation = Quaternion.identity;
+        print("Respawn position: " + RespawnPosition.position);
+        print("Respawn rotation: " + RespawnPosition.rotation);
+        transform.position = RespawnPosition.position;
+        transform.rotation = RespawnPosition.rotation;
         rb.isKinematic = false;
         health = MAX_HEALTH;
         ResetStatus();

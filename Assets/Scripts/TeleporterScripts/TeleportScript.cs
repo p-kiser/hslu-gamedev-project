@@ -21,11 +21,20 @@ public class TeleportScript : MonoBehaviour
 
     public void OnTriggerEnter(Collider other)
     {   
-        Rigidbody playerRb = other.GetComponentInParent<Rigidbody>();
-        if (playerRb != null)
+        Rigidbody rb = other.GetComponentInParent<Rigidbody>();
+        if (rb != null)
         {
-            playerRb.transform.position = Destination.transform.position;
-            playerRb.transform.rotation = Destination.transform.rotation;
+            // Teleport the player
+            rb.transform.position = Destination.transform.position;
+            rb.transform.rotation = Destination.transform.rotation;
+
+            // Set a new respawn position of the Player when he dies
+            PlayerStatus playerStatus = GameObject.FindWithTag("Player").GetComponent<PlayerStatus>();
+
+            if (other.gameObject.tag == "Player") // Make sure only the player can change the respawn position
+            {
+                playerStatus.RespawnPosition = Destination.transform;
+            }
         }
     }
 }
