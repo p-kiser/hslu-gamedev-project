@@ -43,8 +43,8 @@ SphereCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.2
-  m_Center: {x: 0, y: 0.4, z: 0}
+  m_Radius: 0.23116341
+  m_Center: {x: 0, y: 0.4311634, z: 0}
 --- !u!114 &200193534604753819
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -57,7 +57,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7030823f94188624da77e7aed687b0b9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bounceUpForce: 0
+  bounceUpForce: 100
 --- !u!1 &8797959802953258043
 GameObject:
   m_ObjectHideFlags: 0
@@ -73,9 +73,10 @@ GameObject:
   - component: {fileID: -6698237510911229715}
   - component: {fileID: 8797959802953258044}
   - component: {fileID: 5144754966220217002}
+  - component: {fileID: 4167288949103052384}
   m_Layer: 0
   m_Name: BombOne
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -89,7 +90,7 @@ Transform:
   m_GameObject: {fileID: 8797959802953258043}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 14.67, y: -10.71, z: 12.39}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 2, y: 2, z: 2}
   m_Children:
   - {fileID: 3088457813519962628}
   m_Father: {fileID: 0}
@@ -167,7 +168,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   target: {fileID: 3412269561825156285, guid: 50af7ba0f048b4ae58654cb993c17274, type: 3}
-  distanceToPlayer: 20
+  distanceToPlayer: 30
 --- !u!195 &8797959802953258044
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -178,7 +179,7 @@ NavMeshAgent:
   m_Enabled: 1
   m_AgentTypeID: 0
   m_Radius: 0.5
-  m_Speed: 3.5
+  m_Speed: 6
   m_Acceleration: 8
   avoidancePriority: 50
   m_AngularSpeed: 120
@@ -204,3 +205,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   frequency: 5
   intensity: 0.5
+--- !u!114 &4167288949103052384
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8797959802953258043}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 55c77b7b06f486e4ba595d7f72a956ae, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  power: 333
+  radius: 50
+  upForce: 1
+  timeToDetonation: 0
