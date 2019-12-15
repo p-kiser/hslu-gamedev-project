@@ -108,8 +108,6 @@ public class PlayerStatus : MonoBehaviour
         // TODO: Juicy animation
         rb.velocity = rb.angularVelocity = Vector3.zero;
         rb.isKinematic = true;
-        print("Respawn position: " + RespawnPosition.position);
-        print("Respawn rotation: " + RespawnPosition.rotation);
         transform.position = RespawnPosition.position;
         transform.rotation = RespawnPosition.rotation;
         rb.isKinematic = false;
