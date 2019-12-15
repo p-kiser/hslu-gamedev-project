@@ -22,6 +22,11 @@ PrefabInstance:
       propertyPath: m_TagString
       value: KilledBigEnemyReward
       objectReference: {fileID: 0}
+    - target: {fileID: 7420145323189508844, guid: 76ec39d722ce23c4fb420c9353209e1d,
+        type: 3}
+      propertyPath: m_Name
+      value: KillableBigBomb
+      objectReference: {fileID: 0}
     - target: {fileID: 8797959802953258043, guid: 76ec39d722ce23c4fb420c9353209e1d,
         type: 3}
       propertyPath: m_Name
