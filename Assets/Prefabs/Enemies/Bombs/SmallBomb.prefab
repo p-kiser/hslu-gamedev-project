@@ -58,6 +58,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bounceUpForce: 100
+  deathSound: {fileID: 0}
 --- !u!1 &8797959802953258043
 GameObject:
   m_ObjectHideFlags: 0
@@ -169,6 +170,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   target: {fileID: 3412269561825156285, guid: 50af7ba0f048b4ae58654cb993c17274, type: 3}
   distanceToPlayer: 30
+  sound: {fileID: 0}
 --- !u!195 &8797959802953258044
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -218,6 +220,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   power: 111
-  radius: 50
+  radius: 20
   upForce: 1
   timeToDetonation: 0

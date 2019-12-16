@@ -11,7 +11,10 @@ public class ChasePlayerInRange : MonoBehaviour
     private Transform target;
     [SerializeField]
     private float distanceToPlayer = 20f;
+    [SerializeField]
+    private AudioClip sound;
 
+    private bool soundPlayed = false;
 
     // Start is called before the first frame update
     void Start()
@@ -27,6 +30,13 @@ public class ChasePlayerInRange : MonoBehaviour
 
         if (target != null && distance <= distanceToPlayer)
         {
+            if (!soundPlayed) {
+                if (sound != null)
+                {
+                    AudioSource.PlayClipAtPoint(sound, gameObject.transform.position, 1.0f);
+                    soundPlayed = true;
+                }
+            }
             agent.destination = target.transform.position;
         }
     }
