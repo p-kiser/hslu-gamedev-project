@@ -12,6 +12,8 @@ public class ExplodeOnCollision : MonoBehaviour
     private float upForce = 1.0f;
     [SerializeField]
     private float timeToDetonation = 1.0f;
+    [SerializeField]
+    private AudioClip sound;
 
     private void Start()
     {
@@ -22,6 +24,7 @@ public class ExplodeOnCollision : MonoBehaviour
     {
            if (collision.rigidbody != null)
         {
+            AudioSource.PlayClipAtPoint(sound, gameObject.transform.position);
             Invoke("Detonate", timeToDetonation);
         }
     }

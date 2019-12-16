@@ -13655,11 +13655,6 @@ PrefabInstance:
       propertyPath: approachSound
       value: 
       objectReference: {fileID: 0}
-    - target: {fileID: 4278001360201217630, guid: e0ddddb86c312d3428cf9863d9f21937,
-        type: 3}
-      propertyPath: sound
-      value: 
-      objectReference: {fileID: 8300000, guid: f5c7bc64dc557af4693f7b5f94edf06d, type: 3}
     - target: {fileID: 9127724632804322399, guid: e0ddddb86c312d3428cf9863d9f21937,
         type: 3}
       propertyPath: m_Name
@@ -14035,11 +14030,6 @@ PrefabInstance:
       propertyPath: approachSound
       value: 
       objectReference: {fileID: 0}
-    - target: {fileID: -6698237510911229715, guid: 76ec39d722ce23c4fb420c9353209e1d,
-        type: 3}
-      propertyPath: sound
-      value: 
-      objectReference: {fileID: 8300000, guid: f5c7bc64dc557af4693f7b5f94edf06d, type: 3}
     - target: {fileID: 200193534604753819, guid: 76ec39d722ce23c4fb420c9353209e1d,
         type: 3}
       propertyPath: deathSound

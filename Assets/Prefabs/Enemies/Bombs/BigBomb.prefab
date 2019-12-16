@@ -87,6 +87,11 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 4
       objectReference: {fileID: 0}
+    - target: {fileID: -6698237510911229715, guid: 76ec39d722ce23c4fb420c9353209e1d,
+        type: 3}
+      propertyPath: sound
+      value: 
+      objectReference: {fileID: 8300000, guid: f5c7bc64dc557af4693f7b5f94edf06d, type: 3}
     - target: {fileID: 7420145323189508844, guid: 76ec39d722ce23c4fb420c9353209e1d,
         type: 3}
       propertyPath: m_TagString
@@ -112,5 +117,10 @@ PrefabInstance:
       propertyPath: upForce
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 4167288949103052384, guid: 76ec39d722ce23c4fb420c9353209e1d,
+        type: 3}
+      propertyPath: sound
+      value: 
+      objectReference: {fileID: 8300000, guid: d3d5a19f817fc5543b12dd717238d7b6, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 76ec39d722ce23c4fb420c9353209e1d, type: 3}
