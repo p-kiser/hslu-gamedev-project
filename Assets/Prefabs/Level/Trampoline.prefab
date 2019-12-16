@@ -107,6 +107,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bounceForce: 69
+  clip: {fileID: 8300000, guid: 64ef2506ce81e4de4bd9d34c767e7376, type: 3}
 --- !u!1 &3494592882084773364
 GameObject:
   m_ObjectHideFlags: 0

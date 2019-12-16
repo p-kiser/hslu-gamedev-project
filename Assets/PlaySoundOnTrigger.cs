@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlaySound : MonoBehaviour
+public class PlaySoundOnTrigger : MonoBehaviour
 {
     [SerializeField]
     private AudioClip clip;
@@ -10,6 +10,7 @@ public class PlaySound : MonoBehaviour
     private void OnTriggerEnter(Collider other)
     {
         AudioSource.PlayClipAtPoint(clip, gameObject.transform.position);
-        GameObject.Destroy(gameObject);
+        Destroy(gameObject);
     }
+
 }

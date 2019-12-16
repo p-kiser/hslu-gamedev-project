@@ -10,11 +10,15 @@ public class TrampolineScript : MonoBehaviour
     private GameObject player;
     private Rigidbody playerRb;
 
+    [SerializeField]
+    private AudioClip clip;
+
     void OnCollisionEnter(Collision other)
     {
         if (other.gameObject.name == "Player")
         {
             isBouncing = true;
+            AudioSource.PlayClipAtPoint(clip, gameObject.transform.position);
         }
     }
 
