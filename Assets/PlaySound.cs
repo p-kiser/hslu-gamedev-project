@@ -5,10 +5,11 @@ using UnityEngine;
 public class PlaySound : MonoBehaviour
 {
     [SerializeField]
-    AudioSource sound;
+    private AudioClip clip;
 
     private void OnTriggerEnter(Collider other)
     {
-        if (!sound.isPlaying) { sound.Play(); }
+        AudioSource.PlayClipAtPoint(clip, gameObject.transform.position);
+        GameObject.Destroy(gameObject);
     }
 }
