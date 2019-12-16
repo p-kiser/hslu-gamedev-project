@@ -6,18 +6,9 @@ public class TeleportScript : MonoBehaviour
 {
     [SerializeField]
     public Transform Destination;
+    [SerializeField]
+    private AudioClip sound;
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-
-    }
 
     public void OnTriggerEnter(Collider other)
     {   
@@ -27,6 +18,8 @@ public class TeleportScript : MonoBehaviour
             // Teleport the player
             rb.transform.position = Destination.transform.position;
             rb.transform.rotation = Destination.transform.rotation;
+
+            AudioSource.PlayClipAtPoint(sound, rb.transform.position, 1);
 
             // Set a new respawn position of the Player when he dies
             PlayerStatus playerStatus = GameObject.FindWithTag("Player").GetComponent<PlayerStatus>();
