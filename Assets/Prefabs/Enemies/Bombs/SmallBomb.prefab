@@ -223,4 +223,4 @@ MonoBehaviour:
   radius: 20
   upForce: 1
   timeToDetonation: 0
-  sound: {fileID: 8300000, guid: d3d5a19f817fc5543b12dd717238d7b6, type: 3}
+  sound: {fileID: 8300000, guid: d65ad2e71d9b9ef41b737581fe18c350, type: 3}
