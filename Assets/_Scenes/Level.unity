@@ -7439,7 +7439,7 @@ PrefabInstance:
         type: 3}
       propertyPath: startingPosition
       value: 
-      objectReference: {fileID: 2021748640}
+      objectReference: {fileID: 2077137764}
     - target: {fileID: 3412269561825156280, guid: 50af7ba0f048b4ae58654cb993c17274,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -16147,6 +16147,12 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 7934620084342293417, guid: 2210ebf6eca0a7d44a17334d7a5564e0,
     type: 3}
   m_PrefabInstance: {fileID: 2072852287}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &2077137764 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 3315024012976350903, guid: 52f857df6a402734da1bee4ccaf0d1e8,
+    type: 3}
+  m_PrefabInstance: {fileID: 1245534326}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &2077274776
 GameObject:

@@ -58,6 +58,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bounceUpForce: 40
+  sound: {fileID: 8300000, guid: 3546c0a014fd9664685e7e8acbaff96e, type: 3}
 --- !u!1 &4094084344740616469
 GameObject:
   m_ObjectHideFlags: 0

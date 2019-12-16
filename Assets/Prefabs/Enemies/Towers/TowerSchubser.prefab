@@ -253,6 +253,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bounceUpForce: 80
+  sound: {fileID: 8300000, guid: 3546c0a014fd9664685e7e8acbaff96e, type: 3}
 --- !u!65 &1596685212928913283
 BoxCollider:
   m_ObjectHideFlags: 0

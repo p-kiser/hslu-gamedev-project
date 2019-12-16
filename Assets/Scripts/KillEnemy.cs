@@ -7,9 +7,13 @@ public class KillEnemy : MonoBehaviour
 
     [SerializeField]
     private float bounceUpForce;
+    [SerializeField]
+    private AudioClip sound;
 
     void OnTriggerEnter(Collider other)
     {
+        AudioSource.PlayClipAtPoint(sound, gameObject.transform.position);
+
         Debug.Log(other.gameObject.tag);
         if (other.gameObject.CompareTag("Player"))
         {
