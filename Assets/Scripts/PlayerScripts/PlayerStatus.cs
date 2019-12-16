@@ -54,6 +54,7 @@ public class PlayerStatus : MonoBehaviour
         if (other.gameObject.CompareTag("Coin")) {
             points++;
             other.gameObject.SetActive(false);
+            
         }
         if (other.gameObject.CompareTag("HealthPotion")) {
             health++;
