@@ -7,6 +7,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1458571914546443764, guid: 91392f527d04d4f1b88941dda4f4ae11,
+        type: 3}
+      propertyPath: clip
+      value: 
+      objectReference: {fileID: 8300000, guid: 7a0364622b435432fa1e82b4ea663894, type: 3}
     - target: {fileID: 4002877474301066241, guid: 91392f527d04d4f1b88941dda4f4ae11,
         type: 3}
       propertyPath: m_Name
