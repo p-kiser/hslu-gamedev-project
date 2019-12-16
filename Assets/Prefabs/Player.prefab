@@ -108,6 +108,7 @@ GameObject:
   - component: {fileID: -6299467419661134112}
   - component: {fileID: 8874972825173151712}
   - component: {fileID: 6634080750942649475}
+  - component: {fileID: 5906930786630721447}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -4919,6 +4920,19 @@ ParticleSystemRenderer:
   m_Mesh2: {fileID: 0}
   m_Mesh3: {fileID: 0}
   m_MaskInteraction: 0
+--- !u!114 &5906930786630721447
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3412269561825156285}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a2dcfac744705a949a351c2c1cd5c96d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damageSound: {fileID: 8300000, guid: 9b2c0510f5f8f4549a7009a956c51ffb, type: 3}
 --- !u!1 &3412269561880838505
 GameObject:
   m_ObjectHideFlags: 0
