@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 
 public class UiController : MonoBehaviour
 {
@@ -12,7 +13,7 @@ public class UiController : MonoBehaviour
     Slider healthBar;
 
     [SerializeField]
-    Text score;
+    TextMeshProUGUI score;
 
     [SerializeField]
     GameObject key1;
@@ -39,7 +40,7 @@ public class UiController : MonoBehaviour
     void Update()
     {
         healthBar.value = player.GetHealth();
-        score.text = "Score: " + player.GetPoints();
+        score.text = "" + player.GetPoints();
         collectedKeys = player.GetKeysCollected();
 
         if (collectedKeys > prevCollectedKeys)
