@@ -42,25 +42,6 @@ public class UiController : MonoBehaviour
         score.text = "Score: " + player.GetPoints();
         collectedKeys = player.GetKeysCollected();
 
-        // TODO Remove when player.GetKeysCollected() works again
-        testCounter++;
-        if (testCounter > 300)
-        {
-            if (testCounter > 600)
-            {
-                if (testCounter > 900)
-                {
-                    DisplayKeys(3);
-                    return;
-                }
-                DisplayKeys(2);
-                return;
-            }
-            DisplayKeys(1);
-            return;
-
-        }
-
         if (collectedKeys > prevCollectedKeys)
         {
             DisplayKeys(collectedKeys);
