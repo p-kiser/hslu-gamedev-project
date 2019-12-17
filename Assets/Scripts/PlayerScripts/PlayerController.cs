@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerController : MonoBehaviour
 {
@@ -60,6 +61,10 @@ public class PlayerController : MonoBehaviour
 
         // Dash
         if (Input.GetKeyDown(KeyCode.Tab)) Dash();
+
+        if (Input.GetKeyDown(KeyCode.R)) SceneManager.LoadScene(
+                                            SceneManager.GetActiveScene().buildIndex, 
+                                            LoadSceneMode.Single);
     }
 
     // Everything to do with Rigidbody should be done here
