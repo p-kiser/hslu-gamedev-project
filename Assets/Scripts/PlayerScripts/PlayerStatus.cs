@@ -155,10 +155,7 @@ public class PlayerStatus : MonoBehaviour
                 BecomeImmortal();
                 Invoke("BecomeMortal", INVINCIBILLY_AFTER_HIT);
             }
-
         }
-
-        
     }
 
     private void Respawn() {
@@ -202,6 +199,5 @@ public class PlayerStatus : MonoBehaviour
     private void ResetStatus() {
         BecomeMortal();
         SoberUp();
-
     }
 }
