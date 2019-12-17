@@ -18,19 +18,12 @@ public class PlayerController : MonoBehaviour
     AudioClip jumpSound;
 
     // Serialized Fields for maximum tweakability
-    [SerializeField]
-    private float speed = 8.0f;
-    [SerializeField]
-    private float jumpHeight = 2.0f;
-    [SerializeField]
-    private float rotateSpeed = 3.0f;
-    [SerializeField]
-    private float dashDistance = 10.0f;
-    [SerializeField]
-    private float runningMultiplikator = 3.0f;
 
-    //Vector3 startPosition = new Vector3(-510, 52, 0);
-    Vector3 startPosition = new Vector3(-132, -20, 0);
+    private float speed = 6.0f;
+    private float jumpHeight = 2.0f;
+    private float rotateSpeed = 3.0f;
+    private float dashDistance = 10.0f;
+    private float runningMultiplikator = 1.5f;
 
     // constanst
     private int MAX_JUMPS = 2;
