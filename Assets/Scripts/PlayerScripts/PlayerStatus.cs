@@ -13,6 +13,7 @@ public class PlayerStatus : MonoBehaviour
     private int SPEED_UPGRADE = 2;
     private float SPEED_UPGRADE_TIME = 5.0f;
     private float INVINCIBILITY_TIME = 10.0f;
+    private float INVINCIBILLY_AFTER_HIT = 2.0f;
 
     int points;
     int health;
@@ -143,8 +144,21 @@ public class PlayerStatus : MonoBehaviour
     // health related stuff
     public int GetHealth() { return health; }
     public void TakeDamage(int damage) {
-        health -= damage * GetDamageMultiplicator();
-        if (health <= 0) Respawn();
+
+        if (!invincible) {
+            health -= damage;
+            if (health <= 0)
+            {
+                Respawn();
+            }
+            else {
+                BecomeImmortal();
+                Invoke("BecomeMortal", INVINCIBILLY_AFTER_HIT);
+            }
+
+        }
+
+        
     }
 
     private void Respawn() {
@@ -176,7 +190,7 @@ public class PlayerStatus : MonoBehaviour
         invincible = false;
         parti.Stop();
     }
-    public int GetDamageMultiplicator() { return invincible ? 0 : 1;  }
+    //public int GetDamageMultiplicator() { return invincible ? 0 : 1;  }
 
     // special effects
     private void Shake() {
