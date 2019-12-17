@@ -15,6 +15,7 @@ public class PlayerStatus : MonoBehaviour
 
     int points;
     int health;
+    int keysCollected = 0;
 
     bool onSpeed = false;
     bool invincible = false;
@@ -77,7 +78,12 @@ public class PlayerStatus : MonoBehaviour
 
         // key
         if (other.gameObject.CompareTag("Key")) {
-            other.gameObject.SetActive(false);
+            if (keysCollected < 3)
+            {
+                keysCollected++;
+            } else {
+                GameController.instance.RestartGame();
+            }
         }
         // damage
         if (other.gameObject.CompareTag("Enemy")) {

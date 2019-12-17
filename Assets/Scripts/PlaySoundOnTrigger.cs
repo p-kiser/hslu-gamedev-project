@@ -10,7 +10,6 @@ public class PlaySoundOnTrigger : MonoBehaviour
     private void OnTriggerEnter(Collider other)
     {
         AudioSource.PlayClipAtPoint(clip, gameObject.transform.position);
-        Destroy(gameObject);
     }
 
 }
