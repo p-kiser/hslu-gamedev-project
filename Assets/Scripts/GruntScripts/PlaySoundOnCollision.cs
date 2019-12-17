@@ -7,7 +7,7 @@ public class PlaySoundOnCollision : MonoBehaviour
     [SerializeField]
     private AudioClip clip;
 
-    private void OnCollisionEnter(Collider collision)
+    private void OnCollisionEnter(Collision collision)
     {
         Debug.Log("Collision");
         AudioSource.PlayClipAtPoint(clip, gameObject.transform.position);
