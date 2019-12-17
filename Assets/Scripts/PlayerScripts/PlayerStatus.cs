@@ -17,7 +17,7 @@ public class PlayerStatus : MonoBehaviour
 
     int points;
     int health;
-    int keysCollected = 0;
+    public int keysCollected = 0;
 
     bool onSpeed = false;
     bool invincible = false;
