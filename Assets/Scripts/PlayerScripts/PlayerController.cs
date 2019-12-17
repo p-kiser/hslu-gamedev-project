@@ -1,14 +1,17 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
-using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
+    public static PlayerController instance;
+
     // Components
     Rigidbody rb;
     Animator anim;
     PlayerStatus st;
+    Camera cam;
 
     // sound effects
     [SerializeField]
@@ -32,8 +35,22 @@ public class PlayerController : MonoBehaviour
     // constanst
     private int MAX_JUMPS = 2;
     private int jumps = 2;
+    private float pitch;
     private Vector3 moveDirection = Vector3.zero;
+
     private bool running;
+
+    void Awake()
+    {
+        if (instance == null)
+        {
+            instance = this;
+        }
+        else if (instance != this)
+        {
+            Destroy(gameObject);
+        }
+    }
 
     // Start is called before the first frame update
     void Start()
@@ -42,37 +59,51 @@ public class PlayerController : MonoBehaviour
         rb = GetComponent<Rigidbody>();
         anim = GetComponent<Animator>();
         st = GetComponent<PlayerStatus>();
+        cam = GetComponentInChildren<Camera>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (IsGrounded()) jumps = 0;
-
-        // Check Inputs
-        running = Input.GetKey(KeyCode.LeftShift);
-        
         // Calculate movement direction
-        moveDirection = new Vector3(Input.GetAxis("Horizontal"), 0, Input.GetAxis("Vertical"));
+        moveDirection = new Vector3(InputController.instance.GetXMovementAxis(),
+                                    0, 
+                                    InputController.instance.GetYMovementAxis());
         moveDirection = transform.TransformDirection(moveDirection);
 
         // Jumping
-        if (Input.GetKeyDown(KeyCode.Space) && ++jumps < MAX_JUMPS) Jump();
+        if (InputController.instance.Jumping() && ++jumps < MAX_JUMPS) Jump();
 
         // Dash
-        if (Input.GetKeyDown(KeyCode.Tab)) Dash();
+        if (InputController.instance.Dashing()) Dash();
 
-        if (Input.GetKeyDown(KeyCode.R)) GameController.instance.RestartGame();
+        if (InputController.instance.RestartKey()) GameController.instance.RestartGame();
+
     }
 
     // Everything to do with Rigidbody should be done here
     void FixedUpdate()
     {
+        // Check if is grounded
+        if (IsGrounded())
+        {
+            jumps = 0;
+            running = InputController.instance.Running();
+        }
 
-        // Apply rotation using mouse x value
-        transform.Rotate(0, Input.GetAxis("Mouse X") * rotateSpeed, 0);
+        // Apply rotation using mouse X axis value
+        transform.Rotate(0, 
+                         InputController.instance.GetXRotationAxis() * rotateSpeed, 
+                         0);
 
-        // Appy movement to player
+        // Pitch camera according to mouse Y axis value
+        pitch -= InputController.instance.GetYRotationAxis();
+        cam.transform.localEulerAngles = new Vector3(pitch, 0.0f, 0.0f);
+
+
+
+
+        // Apply movement to player
         moveDirection = moveDirection * speed * (running ? runningMultiplikator : 1) * st.GetSpeedMultiplicator();
         rb.AddForce(moveDirection * Time.fixedDeltaTime * 30, ForceMode.Impulse);
 
