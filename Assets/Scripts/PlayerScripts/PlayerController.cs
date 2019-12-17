@@ -62,9 +62,7 @@ public class PlayerController : MonoBehaviour
         // Dash
         if (Input.GetKeyDown(KeyCode.Tab)) Dash();
 
-        if (Input.GetKeyDown(KeyCode.R)) SceneManager.LoadScene(
-                                            SceneManager.GetActiveScene().buildIndex, 
-                                            LoadSceneMode.Single);
+        if (Input.GetKeyDown(KeyCode.R)) GameController.instance.RestartGame();
     }
 
     // Everything to do with Rigidbody should be done here
