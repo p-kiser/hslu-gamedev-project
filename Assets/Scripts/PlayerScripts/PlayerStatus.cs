@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class PlayerStatus : MonoBehaviour
 {
+    public static PlayerStatus instance;
 
     [SerializeField]
     AudioClip jumpSound;
@@ -26,6 +27,18 @@ public class PlayerStatus : MonoBehaviour
     [SerializeField]
     private Transform startingPosition;
     public Transform RespawnPosition;
+
+    void Awake()
+    {
+        if (instance == null)
+        {
+            instance = this;
+        }
+        else if (instance != this)
+        {
+            Destroy(gameObject);
+        }
+    }
 
     // Start is called before the first frame update
     void Start()
@@ -78,12 +91,7 @@ public class PlayerStatus : MonoBehaviour
 
         // key
         if (other.gameObject.CompareTag("Key")) {
-            if (keysCollected < 3)
-            {
-                keysCollected++;
-            } else {
-                GameController.instance.RestartGame();
-            }
+            if (keysCollected < 3) { keysCollected++; }
         }
         // damage
         if (other.gameObject.CompareTag("Enemy")) {
@@ -152,6 +160,8 @@ public class PlayerStatus : MonoBehaviour
 
     // power up
     public int GetSpeedMultiplicator() { return onSpeed ? SPEED_UPGRADE : 1; }
+
+    public int GetKeysCollected() { return keysCollected; }
     public bool IsOnSpeed() { return onSpeed; }
     private void SoberUp() { onSpeed = false;  }
 
