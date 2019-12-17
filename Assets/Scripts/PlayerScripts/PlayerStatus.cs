@@ -5,6 +5,9 @@ using UnityEngine;
 public class PlayerStatus : MonoBehaviour
 {
 
+    [SerializeField]
+    AudioClip jumpSound;
+
     private int MAX_HEALTH = 5;
     private int SPEED_UPGRADE = 2;
     private float SPEED_UPGRADE_TIME = 5.0f;

@@ -9,6 +9,10 @@ public class PlayerController : MonoBehaviour
     Animator anim;
     PlayerStatus st;
 
+    // sound effects
+    [SerializeField]
+    AudioClip jumpSound;
+
     // Serialized Fields for maximum tweakability
     [SerializeField]
     private float speed = 8.0f;
@@ -82,6 +86,8 @@ public class PlayerController : MonoBehaviour
         // advanced mathemagics:
         float y = Mathf.Sqrt(jumpHeight * -2f * Physics.gravity.y);
         rb.AddForce(Vector3.up * y, ForceMode.VelocityChange);
+
+        PlaySound(jumpSound);
         anim.Play("Jump");
     }
 
@@ -93,5 +99,9 @@ public class PlayerController : MonoBehaviour
 
         Vector3 dashVelocity = Vector3.Scale(transform.forward, dashDistance * new Vector3(x, y, z));
         rb.AddForce(dashVelocity, ForceMode.VelocityChange);
+    }
+
+    private void PlaySound(AudioClip clip) {
+        AudioSource.PlayClipAtPoint(clip, gameObject.transform.position);
     }
 }
