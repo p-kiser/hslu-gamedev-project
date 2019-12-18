@@ -17,7 +17,7 @@ public class PlayerStatus : MonoBehaviour
 
     int points;
     int health;
-    public int keysCollected = 0;
+    int keysCollected = 0;
 
     bool onSpeed = false;
     bool invincible = false;
@@ -78,14 +78,16 @@ public class PlayerStatus : MonoBehaviour
             
         }
         if (other.gameObject.CompareTag("HealthPotion")) {
-            health++;
-            other.gameObject.SetActive(false);
-
+            if (health < MAX_HEALTH)
+            {
+                health++;
+                other.gameObject.SetActive(false);
+            }
         }
         if (other.gameObject.CompareTag("HealthPotionBig")) {
-            health += 3;
+            health = MAX_HEALTH;
             other.gameObject.SetActive(false);
-
+            
         }
 
         if (other.gameObject.CompareTag("SpeedPotion")) {
