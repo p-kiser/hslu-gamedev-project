@@ -59,6 +59,7 @@ public class UiController : MonoBehaviour
         if (collectedKeys > prevCollectedKeys)
         {
             DisplayKeys(collectedKeys);
+            prevCollectedKeys = collectedKeys;
         }
     }
 
