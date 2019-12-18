@@ -55,6 +55,9 @@ public class PlayerStatus : MonoBehaviour
         transform.rotation = startingPosition.rotation;
         // Set the start of the level as spawn point
         RespawnPosition = startingPosition;
+
+        UiController.instance.UpdateUI();
+
     }
 
     // Update is called once per frame
@@ -115,6 +118,8 @@ public class PlayerStatus : MonoBehaviour
             points += 6;
         }
 
+        UiController.instance.UpdateUI();
+
     }
 
     private void OnCollisionStay(Collision collision)
@@ -122,6 +127,7 @@ public class PlayerStatus : MonoBehaviour
         if (collision.gameObject.CompareTag("Spike")) {
             TakeDamage(1);
         }
+
     }
 
     private void OnCollisionEnter(Collision collision)
@@ -135,6 +141,7 @@ public class PlayerStatus : MonoBehaviour
         {
             TakeDamage(2);
         }
+
     }
 
     // score related stuff
@@ -156,38 +163,35 @@ public class PlayerStatus : MonoBehaviour
                 Invoke("BecomeMortal", INVINCIBILLY_AFTER_HIT);
             }
         }
+
+        UiController.instance.UpdateUI();
+
     }
 
-    private void Respawn() {
-        // TODO: Juicy animation
-        rb.velocity = rb.angularVelocity = Vector3.zero;
-        rb.isKinematic = true;
-        transform.position = RespawnPosition.position;
-        transform.rotation = RespawnPosition.rotation;
-        rb.isKinematic = false;
-        health = MAX_HEALTH;
-        ResetStatus();
-    }
+
 
     // power up
     public int GetSpeedMultiplicator() { return onSpeed ? SPEED_UPGRADE : 1; }
 
     public int GetKeysCollected() { return keysCollected; }
+
     public bool IsOnSpeed() { return onSpeed; }
+
     private void SoberUp() { onSpeed = false;  }
 
     public bool IsInvincible() { return invincible;  }
+
 
     private void BecomeImmortal() {
         invincible = true;
         parti.Play();
         
     }
+
     private void BecomeMortal() {
         invincible = false;
         parti.Stop();
     }
-    //public int GetDamageMultiplicator() { return invincible ? 0 : 1;  }
 
     // special effects
     private void Shake() {
@@ -200,4 +204,20 @@ public class PlayerStatus : MonoBehaviour
         BecomeMortal();
         SoberUp();
     }
+
+    private void Respawn()
+    {
+        // TODO: Juicy animation
+        rb.velocity = rb.angularVelocity = Vector3.zero;
+        rb.isKinematic = true;
+        transform.position = RespawnPosition.position;
+        transform.rotation = RespawnPosition.rotation;
+        rb.isKinematic = false;
+        health = MAX_HEALTH;
+        ResetStatus();
+
+        UiController.instance.UpdateUI();
+
+    }
+
 }

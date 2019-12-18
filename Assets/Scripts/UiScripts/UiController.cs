@@ -6,6 +6,9 @@ using TMPro;
 
 public class UiController : MonoBehaviour
 {
+
+    public static UiController instance;
+
     [SerializeField]
     PlayerStatus player;
 
@@ -26,6 +29,17 @@ public class UiController : MonoBehaviour
 
     int testCounter;
 
+    private void Awake()
+    {
+        if (instance == null)
+        {
+            instance = this;
+        }
+        else if (instance != this)
+        {
+            Destroy(gameObject);
+        }
+    }
 
     // Start is called before the first frame update
     void Start()
@@ -36,8 +50,7 @@ public class UiController : MonoBehaviour
         key3.SetActive(false);
     }
 
-    // Update is called once per frame
-    void Update()
+    public void UpdateUI()
     {
         healthBar.value = player.GetHealth();
         score.text = "" + player.GetPoints();

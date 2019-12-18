@@ -41,7 +41,7 @@ public class InputController : MonoBehaviour
     // Running key bindings
     public bool Running()
     {
-        if (Input.GetKey(KeyCode.LeftShift)) {
+        if (Input.GetKey(KeyCode.LeftShift) || Input.GetKey(KeyCode.RightShift)) {
             return true;
         } else {
             return false;
