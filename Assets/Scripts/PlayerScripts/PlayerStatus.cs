@@ -158,6 +158,7 @@ public class PlayerStatus : MonoBehaviour
     {
         if (keysCollected <= 3) { keysCollected++; }
     }
+    public int GetKeysCollected() { return keysCollected; }
     public bool AllKeysCollected() 
     {
         if (keysCollected == 3)
