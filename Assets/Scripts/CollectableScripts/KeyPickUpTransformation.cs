@@ -15,6 +15,8 @@ public class KeyPickUpTransformation : MonoBehaviour
         // Teleport the player back to the hub
         if (other.CompareTag("Player") && gameObject.CompareTag("Key"))
         {
+            PlayerStatus.instance.CollectKey();
+
             // Teleport player back to the hub
             Transform playerTransform = other.attachedRigidbody.transform;
             playerTransform.position = returnPosition.position;
@@ -26,17 +28,5 @@ public class KeyPickUpTransformation : MonoBehaviour
             gameObject.transform.tag = "CollectedKey";
 
         }
-    }
-
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
     }
 }

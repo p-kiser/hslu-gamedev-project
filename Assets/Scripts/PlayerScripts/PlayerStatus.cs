@@ -102,9 +102,10 @@ public class PlayerStatus : MonoBehaviour
         }
 
         // key
-        if (other.gameObject.CompareTag("Key")) {
-            if (keysCollected <= 3) { keysCollected++; }
-        }
+        //if (other.gameObject.CompareTag("Key")) {
+        //    if (keysCollected <= 3) { keysCollected++; }
+        //}
+
         // damage
         if (other.gameObject.CompareTag("Enemy")) {
             Debug.Log("Enemy collision");
@@ -150,6 +151,11 @@ public class PlayerStatus : MonoBehaviour
             TakeDamage(2);
         }
 
+    }
+
+    public void CollectKey()
+    {
+        if (keysCollected <= 3) { keysCollected++; }
     }
 
     // score related stuff
