@@ -242,17 +242,16 @@ public class PlayerStatus : MonoBehaviour
         transform.position = RespawnPosition.position;
         transform.rotation = RespawnPosition.rotation;
         rb.isKinematic = false;
+
+        ResetStatus();
+
+        UiController.instance.UpdateUI();
+
         if (health <= 1)
         {
             health = MAX_HEALTH;
-            if (points >= 3)
-            {
-                points -= 3;
-            }
-
         }
-        ResetStatus();
-
+        
         UiController.instance.UpdateUI();
 
     }
