@@ -92,25 +92,10 @@ PrefabInstance:
       propertyPath: sound
       value: 
       objectReference: {fileID: 8300000, guid: f5c7bc64dc557af4693f7b5f94edf06d, type: 3}
-    - target: {fileID: 7420145323189508844, guid: 76ec39d722ce23c4fb420c9353209e1d,
-        type: 3}
-      propertyPath: m_TagString
-      value: KilledBigEnemyReward
-      objectReference: {fileID: 0}
-    - target: {fileID: 7420145323189508844, guid: 76ec39d722ce23c4fb420c9353209e1d,
-        type: 3}
-      propertyPath: m_Name
-      value: KillableBigBomb
-      objectReference: {fileID: 0}
-    - target: {fileID: 8797959802953258044, guid: 76ec39d722ce23c4fb420c9353209e1d,
-        type: 3}
-      propertyPath: m_Speed
-      value: 2
-      objectReference: {fileID: 0}
     - target: {fileID: 4167288949103052384, guid: 76ec39d722ce23c4fb420c9353209e1d,
         type: 3}
       propertyPath: power
-      value: 222
+      value: 50
       objectReference: {fileID: 0}
     - target: {fileID: 4167288949103052384, guid: 76ec39d722ce23c4fb420c9353209e1d,
         type: 3}
@@ -122,5 +107,20 @@ PrefabInstance:
       propertyPath: sound
       value: 
       objectReference: {fileID: 8300000, guid: d65ad2e71d9b9ef41b737581fe18c350, type: 3}
+    - target: {fileID: 8797959802953258044, guid: 76ec39d722ce23c4fb420c9353209e1d,
+        type: 3}
+      propertyPath: m_Speed
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7420145323189508844, guid: 76ec39d722ce23c4fb420c9353209e1d,
+        type: 3}
+      propertyPath: m_TagString
+      value: KilledBigEnemyReward
+      objectReference: {fileID: 0}
+    - target: {fileID: 7420145323189508844, guid: 76ec39d722ce23c4fb420c9353209e1d,
+        type: 3}
+      propertyPath: m_Name
+      value: KillableBigBomb
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 76ec39d722ce23c4fb420c9353209e1d, type: 3}

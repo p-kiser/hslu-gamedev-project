@@ -219,7 +219,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 55c77b7b06f486e4ba595d7f72a956ae, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  power: 111
+  power: 25
   radius: 20
   upForce: 1
   timeToDetonation: 0
