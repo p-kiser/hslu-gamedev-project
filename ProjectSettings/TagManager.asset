@@ -18,6 +18,7 @@ TagManager:
   - KilledBigEnemyReward
   - SpecialCoin
   - CollectedKey
+  - HealthPotionBig
   layers:
   - Default
   - TransparentFX
