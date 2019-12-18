@@ -153,9 +153,23 @@ public class PlayerStatus : MonoBehaviour
 
     }
 
+    // key related stuff
     public void CollectKey()
     {
         if (keysCollected <= 3) { keysCollected++; }
+    }
+    public bool AllKeysCollected() 
+    {
+        if (keysCollected == 3)
+        {
+            return true;
+        } else if (keysCollected < 3)
+        {
+            return false;
+        } else
+        {
+            return false;
+        }
     }
 
     // score related stuff
@@ -187,7 +201,7 @@ public class PlayerStatus : MonoBehaviour
     // power up
     public int GetSpeedMultiplicator() { return onSpeed ? SPEED_UPGRADE : 1; }
 
-    public int GetKeysCollected() { return keysCollected; }
+
 
     public bool IsOnSpeed() { return onSpeed; }
 
