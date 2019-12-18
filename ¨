@@ -1,0 +1,18 @@
+
+# Please enter the commit message for your changes. Lines starting
+# with '#' will be ignored, and an empty message aborts the commit.
+#
+# On branch master
+# Your branch is up to date with 'origin/master'.
+#
+# Changes to be committed:
+#	new file:   Assets/Materials/DummyGrunt.mat
+#	new file:   Assets/Materials/DummyGrunt.mat.meta
+#	modified:   Assets/Prefabs/Level/Teleporter.prefab
+#	new file:   Assets/Textures/swirly.png
+#	new file:   Assets/Textures/swirly.png.meta
+#	modified:   Assets/_Scenes/Level.unity
+#
+
+pimped dummy grunt
+

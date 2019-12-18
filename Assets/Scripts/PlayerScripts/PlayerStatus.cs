@@ -82,6 +82,12 @@ public class PlayerStatus : MonoBehaviour
             other.gameObject.SetActive(false);
 
         }
+        if (other.gameObject.CompareTag("HealthPotionBig")) {
+            health += 3;
+            other.gameObject.SetActive(false);
+
+        }
+
         if (other.gameObject.CompareTag("SpeedPotion")) {
             onSpeed = true;
             other.gameObject.SetActive(false);
