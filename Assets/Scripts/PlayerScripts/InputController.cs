@@ -74,7 +74,7 @@ public class InputController : MonoBehaviour
 
     public bool RestartKey()
     {
-        if (Input.GetKeyDown(KeyCode.R))
+        if (Input.GetKeyDown(KeyCode.R) && PlayerStatus.instance.AllKeysCollected())
         {
             return true;
         } else
