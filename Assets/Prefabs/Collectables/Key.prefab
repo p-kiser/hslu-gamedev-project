@@ -16585,6 +16585,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   keyPedestal: {fileID: 0}
+  returnPosition: {fileID: 0}
 --- !u!1 &7163348481165248486
 GameObject:
   m_ObjectHideFlags: 0
@@ -16599,7 +16600,7 @@ GameObject:
   - component: {fileID: 5129643819676461503}
   m_Layer: 0
   m_Name: Cylinder
-  m_TagString: Key
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

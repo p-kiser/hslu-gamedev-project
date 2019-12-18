@@ -92,7 +92,7 @@ public class PlayerStatus : MonoBehaviour
 
         // key
         if (other.gameObject.CompareTag("Key")) {
-            if (keysCollected < 3) { keysCollected++; }
+            if (keysCollected <= 3) { keysCollected++; }
         }
         // damage
         if (other.gameObject.CompareTag("Enemy")) {
