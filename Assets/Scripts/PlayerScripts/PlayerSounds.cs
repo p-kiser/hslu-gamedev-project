@@ -32,6 +32,5 @@ public class PlayerSounds : MonoBehaviour
         {
             AudioSource.PlayClipAtPoint(damageSound, gameObject.transform.position);
         }
-
     }
 }

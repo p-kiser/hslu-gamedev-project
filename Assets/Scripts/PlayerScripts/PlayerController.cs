@@ -13,24 +13,22 @@ public class PlayerController : MonoBehaviour
     PlayerStatus st;
     Camera cam;
 
-    // sound effects
+    // Sounds
     [SerializeField]
     AudioClip jumpSound;
 
-    // Serialized Fields for maximum tweakability
+    // Constants
+    private readonly float SPEED = 6.0f;
+    private readonly float JUMP_HEIGHT = 2.0f;
+    private readonly float ROTATE_SPEED = 3.0f;
+    private readonly float DASH_DISTANCE = 10.0f;
+    private readonly float RUNNING_MULTIPLICATOR = 1.5f;
+    private readonly int MAX_JUMPS = 2;
 
-    private float speed = 6.0f;
-    private float jumpHeight = 2.0f;
-    private float rotateSpeed = 3.0f;
-    private float dashDistance = 10.0f;
-    private float runningMultiplikator = 1.5f;
-
-    // constanst
-    private int MAX_JUMPS = 2;
-    private int jumps = 2;
+    // Variables
     private float pitch;
+    private int jumps = 2;
     private Vector3 moveDirection = Vector3.zero;
-
     private bool running;
 
     void Awake()
@@ -65,12 +63,16 @@ public class PlayerController : MonoBehaviour
         moveDirection = transform.TransformDirection(moveDirection);
 
         // Jumping
-        if (InputController.instance.Jumping() && ++jumps < MAX_JUMPS) Jump();
+        if (InputController.instance.Jumping() && ++jumps < MAX_JUMPS) { Jump(); }
 
         // Dash
-        if (InputController.instance.Dashing()) Dash();
+        if (InputController.instance.Dashing()) { Dash(); }
 
-        if (InputController.instance.RestartKey()) GameController.instance.RestartGame();
+        // Restart the Game
+        if (InputController.instance.RestartKey()) { GameController.instance.RestartGame(); }
+
+        // Reset player position
+        if (InputController.instance.ResetKey()) { PlayerStatus.instance.Reset(); }
 
     }
 
@@ -86,22 +88,17 @@ public class PlayerController : MonoBehaviour
 
         // Apply rotation using mouse X axis value
         transform.Rotate(0, 
-                         InputController.instance.GetXRotationAxis() * rotateSpeed, 
+                         InputController.instance.GetXRotationAxis() * ROTATE_SPEED, 
                          0);
 
         // Pitch camera according to mouse Y axis value
         pitch -= InputController.instance.GetYRotationAxis();
         cam.transform.localEulerAngles = new Vector3(pitch, 0.0f, 0.0f);
 
-
-
-
         // Apply movement to player
-        moveDirection = moveDirection * speed * (running ? runningMultiplikator : 1) * st.GetSpeedMultiplicator();
+        moveDirection = moveDirection * SPEED * (running ? RUNNING_MULTIPLICATOR : 1) * st.GetSpeedMultiplicator();
         rb.AddForce(moveDirection * Time.fixedDeltaTime * 30, ForceMode.Impulse);
-
     }
-
 
     private bool IsGrounded()
     {
@@ -111,7 +108,7 @@ public class PlayerController : MonoBehaviour
 
     private void Jump() {
         // advanced mathemagics:
-        float y = Mathf.Sqrt(jumpHeight * -2f * Physics.gravity.y);
+        float y = Mathf.Sqrt(JUMP_HEIGHT * -2f * Physics.gravity.y);
         rb.AddForce(Vector3.up * y, ForceMode.VelocityChange);
 
         PlaySound(jumpSound);
@@ -124,7 +121,7 @@ public class PlayerController : MonoBehaviour
         float y = 0.0f;
         float z = x;
 
-        Vector3 dashVelocity = Vector3.Scale(transform.forward, dashDistance * new Vector3(x, y, z));
+        Vector3 dashVelocity = Vector3.Scale(transform.forward, DASH_DISTANCE * new Vector3(x, y, z));
         rb.AddForce(dashVelocity, ForceMode.VelocityChange);
     }
 

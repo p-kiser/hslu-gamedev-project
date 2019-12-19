@@ -57,7 +57,6 @@ public class PlayerStatus : MonoBehaviour
         RespawnPosition = startingPosition;
 
         UiController.instance.UpdateUI();
-
     }
 
     // Update is called once per frame
@@ -135,7 +134,6 @@ public class PlayerStatus : MonoBehaviour
         if (collision.gameObject.CompareTag("Spike")) {
             TakeDamage(1);
         }
-
     }
 
     private void OnCollisionEnter(Collision collision)
@@ -149,7 +147,6 @@ public class PlayerStatus : MonoBehaviour
         {
             TakeDamage(2);
         }
-
     }
 
     /*** key related stuff ***/
@@ -241,5 +238,12 @@ public class PlayerStatus : MonoBehaviour
         }
         
         UiController.instance.UpdateUI();
+    }
+
+    // manual respawn
+    // for debugging only
+    public void Reset()
+    {
+        Respawn();
     }
 }
