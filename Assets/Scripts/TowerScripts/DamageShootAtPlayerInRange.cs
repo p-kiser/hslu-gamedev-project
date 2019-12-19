@@ -30,7 +30,6 @@ public class DamageShootAtPlayerInRange : MonoBehaviour
     bool shooted = false;
     int index;
 
-
     // Start is called before the first frame update
     void Start()
     {
@@ -83,7 +82,6 @@ public class DamageShootAtPlayerInRange : MonoBehaviour
                     shooted = true;
                     Invoke("ToggleShooted", RATE_OF_FIRE);
                 }
-
             }
         }
     }
@@ -103,8 +101,6 @@ public class DamageShootAtPlayerInRange : MonoBehaviour
 
         // shoot projectile and increase the counter
         rbs[index].AddForce((target.transform.position - transform.position) * bulletSpeed);
-
-        Debug.Log("Shooteded a projectile called: " + index);
     }
 
     void ToggleShooted() { shooted = !shooted; }

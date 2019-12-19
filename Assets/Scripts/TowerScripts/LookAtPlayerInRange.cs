@@ -11,12 +11,6 @@ public class LookAtPlayerInRange : MonoBehaviour
     [SerializeField]
     private float distanceToPlayer = 20f;
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
     // Update is called once per frame
     void Update()
     {
@@ -28,6 +22,5 @@ public class LookAtPlayerInRange : MonoBehaviour
             Quaternion rotation = Quaternion.LookRotation(lookVector);
             transform.rotation = Quaternion.Slerp(transform.rotation, rotation, speed * Time.deltaTime);
         }
-        
     }
 }

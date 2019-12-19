@@ -19,7 +19,5 @@ public class ProjectileController : MonoBehaviour
 
     private void Deactivate() {
         gameObject.SetActive(false);
-        //Debug.Log("Did a deactivate");
-
     }
 }
