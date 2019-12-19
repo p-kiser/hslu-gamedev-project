@@ -155,6 +155,7 @@ public class PlayerStatus : MonoBehaviour
     {
         if (keysCollected <= 3) { keysCollected++; }
     }
+
     public int GetKeysCollected() { return keysCollected; }
 
     public bool AllKeysCollected() 
@@ -245,5 +246,11 @@ public class PlayerStatus : MonoBehaviour
     public void Reset()
     {
         Respawn();
+    }
+
+    public void SetKeys()
+    {
+        CollectKey();
+        UiController.instance.UpdateUI();
     }
 }

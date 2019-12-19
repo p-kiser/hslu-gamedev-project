@@ -39,4 +39,6 @@ public class InputController : MonoBehaviour
     // Reset Player to last Respawn point (for debugging)
     public bool ResetKey() { return Input.GetKeyDown(KeyCode.Return); }
 
+    // Reset Player to last Respawn point (for debugging)
+    public bool GibKey() { return Input.GetKeyDown(KeyCode.K); }
 }

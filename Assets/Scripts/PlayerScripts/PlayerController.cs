@@ -74,6 +74,8 @@ public class PlayerController : MonoBehaviour
         // Reset player position
         if (InputController.instance.ResetKey()) { PlayerStatus.instance.Reset(); }
 
+        if (InputController.instance.GibKey()) { PlayerStatus.instance.SetKeys();  }
+
     }
 
     // Everything to do with Rigidbody should be done here
