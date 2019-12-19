@@ -4,9 +4,9 @@ using UnityEngine;
 
 public class KillEnemy : MonoBehaviour
 {
-
     [SerializeField]
     private float bounceUpForce;
+
     [SerializeField]
     private AudioClip sound;
 
@@ -18,7 +18,7 @@ public class KillEnemy : MonoBehaviour
         if (other.gameObject.CompareTag("Player"))
         {
             Debug.Log("DAMN you killed that enemy hard!");
-            GameObject.Destroy(gameObject);
+            Destroy(gameObject);
             other.attachedRigidbody.AddForce(Vector3.up * bounceUpForce, ForceMode.Impulse);
         }
     }
