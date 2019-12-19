@@ -4,8 +4,10 @@ using UnityEngine;
 
 public class Pulsator : MonoBehaviour
 {
+    [Tooltip("How fast the object pulsates")]
     [SerializeField]
     private float frequency = 2;
+
     [SerializeField]
     private float intensity = 1;
 
@@ -15,7 +17,6 @@ public class Pulsator : MonoBehaviour
     void Start()
     {
         origSize = transform.localScale;
-        Debug.Log(origSize.ToString());
     }
 
     // Update is called once per frame

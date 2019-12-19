@@ -5,8 +5,10 @@ using UnityEngine;
 public class Vibrator : MonoBehaviour
 {
     Vector3 startPosition;
+
     [SerializeField]
     float speed = 100;
+
     [SerializeField]
     float intensity = 1;
 

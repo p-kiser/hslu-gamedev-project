@@ -26,7 +26,6 @@ public class KeyPickUpTransformation : MonoBehaviour
             gameObject.transform.position = keyPedestal.position + new Vector3(0.0f, 2.0f, 0.0f);
             gameObject.transform.localScale = new Vector3(0.2f, 0.2f, 0.2f);
             gameObject.transform.tag = "CollectedKey";
-
         }
     }
 }
