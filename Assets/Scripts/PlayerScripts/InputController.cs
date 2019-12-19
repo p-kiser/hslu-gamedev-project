@@ -18,75 +18,25 @@ public class InputController : MonoBehaviour
         }
     }
 
-    public float GetXMovementAxis()
-    {
-        return Input.GetAxis("Horizontal");
-    }
-
-    public float GetYMovementAxis()
-    {
-        return Input.GetAxis("Vertical");
-    }
-
-    public float GetXRotationAxis()
-    {
-        return Input.GetAxis("Mouse X");
-    }
-
-    public float GetYRotationAxis()
-    {
-        return Input.GetAxis("Mouse Y");
-    }
+    // Read Inputs
+    public float GetXMovementAxis() { return Input.GetAxis("Horizontal"); }
+    public float GetYMovementAxis() { return Input.GetAxis("Vertical"); }
+    public float GetXRotationAxis() { return Input.GetAxis("Mouse X"); }
+    public float GetYRotationAxis() { return Input.GetAxis("Mouse Y"); }
 
     // Running key bindings
-    public bool Running()
-    {
-        if (Input.GetKey(KeyCode.LeftShift) || Input.GetKey(KeyCode.RightShift)) {
-            return true;
-        } else {
-            return false;
-        }
-        
-    }
+    public bool Running() { return (Input.GetKey(KeyCode.LeftShift) || Input.GetKey(KeyCode.RightShift));  }
 
     // Jumping key bindings
-    public bool Jumping()
-    {
-        if (Input.GetKeyDown(KeyCode.Space)) {
-            return true;
-        } else
-        {
-            return false;
-        }
-    }
+    public bool Jumping() { return Input.GetKeyDown(KeyCode.Space);  }
 
     // Dashing key bindings
-    public bool Dashing()
-    {
-        if (Input.GetKeyDown(KeyCode.Tab))
-        {
-            return true;
-        } else
-        {
-            return false;
-        }
-    }
+    public bool Dashing() { return Input.GetKeyDown(KeyCode.Tab);  }
 
-    public bool RestartKey()
-    {
-        //if (Input.GetKeyDown(KeyCode.R) && PlayerStatus.instance.AllKeysCollected())
-        if (Input.GetKeyDown(KeyCode.R))
-        {
-            return true;
-        } else
-        {
-            return false;
-        }
-    }
+    // Restart Key bindings
+    public bool RestartKey() {return Input.GetKeyDown(KeyCode.R); }
 
-    public bool ResetKey()
-    {
-        return Input.GetKeyDown(KeyCode.Return);
-    }
+    // Reset Player to last Respawn point (for debugging)
+    public bool ResetKey() { return Input.GetKeyDown(KeyCode.Return); }
 
 }

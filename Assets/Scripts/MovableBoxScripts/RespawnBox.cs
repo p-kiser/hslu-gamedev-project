@@ -14,12 +14,6 @@ public class RespawnBox : MonoBehaviour
         respawnRotation = transform.rotation;
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-
-    }
-
     void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.CompareTag("Deathzone"))
