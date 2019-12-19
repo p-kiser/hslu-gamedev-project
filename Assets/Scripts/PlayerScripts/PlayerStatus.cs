@@ -9,14 +9,14 @@ public class PlayerStatus : MonoBehaviour
     [SerializeField]
     AudioClip jumpSound;
 
-    private int MAX_HEALTH = 5;
-    private int SPEED_UPGRADE = 2;
-    private float SPEED_UPGRADE_TIME = 5.0f;
-    private float INVINCIBILITY_TIME = 10.0f;
-    private float INVINCIBILLY_AFTER_HIT = 2.0f;
+    private readonly int MAX_HEALTH = 5;
+    private readonly int SPEED_UPGRADE = 2;
+    private readonly float SPEED_UPGRADE_TIME = 5.0f;
+    private readonly float INVINCIBILITY_TIME = 10.0f;
+    private readonly float INVINCIBILLY_AFTER_HIT = 2.0f;
 
-    int points;
     int health;
+    int points = 0;
     int keysCollected = 0;
 
     bool onSpeed = false;
@@ -71,7 +71,6 @@ public class PlayerStatus : MonoBehaviour
 
         /*** Collectables ***/
 
-        // collectables
         if (other.gameObject.CompareTag("Coin")) {
             points++;
             other.gameObject.SetActive(false);
@@ -106,7 +105,8 @@ public class PlayerStatus : MonoBehaviour
         //    if (keysCollected <= 3) { keysCollected++; }
         //}
 
-        // damage
+        /*** Taking Damage ***/
+
         if (other.gameObject.CompareTag("Enemy")) {
             Debug.Log("Enemy collision");
             TakeDamage(1);
@@ -128,10 +128,7 @@ public class PlayerStatus : MonoBehaviour
         }
 
         UiController.instance.UpdateUI();
-
     }
-
-    /*** Taking Damage ***/
 
     private void OnCollisionStay(Collision collision)
     {
@@ -155,24 +152,17 @@ public class PlayerStatus : MonoBehaviour
 
     }
 
-    // key related stuff
+    /*** key related stuff ***/
+
     public void CollectKey()
     {
         if (keysCollected <= 3) { keysCollected++; }
     }
     public int GetKeysCollected() { return keysCollected; }
+
     public bool AllKeysCollected() 
     {
-        if (keysCollected == 3)
-        {
-            return true;
-        } else if (keysCollected < 3)
-        {
-            return false;
-        } else
-        {
-            return false;
-        }
+        return keysCollected >= 3;
     }
 
     /*** Score and Health ***/
@@ -200,12 +190,9 @@ public class PlayerStatus : MonoBehaviour
         UiController.instance.UpdateUI();
     }
 
+    /*** Powerup Stuff ***/
 
-
-    // power up
     public int GetSpeedMultiplicator() { return onSpeed ? SPEED_UPGRADE : 1; }
-
-
 
     public bool IsOnSpeed() { return onSpeed; }
 
@@ -213,11 +200,9 @@ public class PlayerStatus : MonoBehaviour
 
     public bool IsInvincible() { return invincible;  }
 
-
     private void BecomeImmortal() {
         invincible = true;
         parti.Play();
-        
     }
 
     private void BecomeMortal() {
@@ -225,11 +210,11 @@ public class PlayerStatus : MonoBehaviour
         parti.Stop();
     }
 
-    // special effects
+    // special shaking effect
     private void Shake() {
         Vector3 pos = transform.position;
         float shake = Mathf.Sin(Time.time * 100) * 0.05f;
-        transform.position = pos + new Vector3(shake, shake, shake);
+        transform.position = pos + new Vector3(shake, -shake, shake);
     }
 
     private void ResetStatus() {
@@ -256,7 +241,5 @@ public class PlayerStatus : MonoBehaviour
         }
         
         UiController.instance.UpdateUI();
-
     }
-
 }
