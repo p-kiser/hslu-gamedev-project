@@ -153,7 +153,10 @@ public class PlayerStatus : MonoBehaviour
 
     public void CollectKey()
     {
-        if (keysCollected <= 3) { keysCollected++; }
+        if (keysCollected <= 3) {
+            keysCollected++;
+        }
+        if (AllKeysCollected()) { GameController.instance.HappyEnd(); }
     }
 
     public int GetKeysCollected() { return keysCollected; }

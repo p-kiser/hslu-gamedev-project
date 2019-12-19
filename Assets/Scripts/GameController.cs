@@ -5,6 +5,8 @@ using UnityEngine.SceneManagement;
 
 public class GameController : MonoBehaviour
 {
+    [SerializeField]
+    GameObject SpecialCoin;
 
     public static GameController instance;
 
@@ -24,5 +26,9 @@ public class GameController : MonoBehaviour
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
+
+    public void HappyEnd() {
+        SpecialCoin.SetActive(true);
+    } 
 
 }
