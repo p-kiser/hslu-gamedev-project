@@ -64,12 +64,12 @@ public class PlayerStatus : MonoBehaviour
     void Update()
     {
         if (onSpeed) { Shake(); }
-
     }
 
     // collisions
     void OnTriggerEnter(Collider other) {
-        Debug.Log(other.gameObject.tag);
+
+        /*** Collectables ***/
 
         // collectables
         if (other.gameObject.CompareTag("Coin")) {
@@ -131,6 +131,8 @@ public class PlayerStatus : MonoBehaviour
 
     }
 
+    /*** Taking Damage ***/
+
     private void OnCollisionStay(Collision collision)
     {
         if (collision.gameObject.CompareTag("Spike")) {
@@ -173,6 +175,8 @@ public class PlayerStatus : MonoBehaviour
         }
     }
 
+    /*** Score and Health ***/
+
     // score related stuff
     public int GetPoints() { return points; }
     public void AddPoint(int points) { this.points += points; }
@@ -194,7 +198,6 @@ public class PlayerStatus : MonoBehaviour
         }
 
         UiController.instance.UpdateUI();
-
     }
 
 

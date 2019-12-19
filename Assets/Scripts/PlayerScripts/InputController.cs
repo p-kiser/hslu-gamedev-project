@@ -74,13 +74,19 @@ public class InputController : MonoBehaviour
 
     public bool RestartKey()
     {
-        if (Input.GetKeyDown(KeyCode.R) && PlayerStatus.instance.AllKeysCollected())
+        //if (Input.GetKeyDown(KeyCode.R) && PlayerStatus.instance.AllKeysCollected())
+        if (Input.GetKeyDown(KeyCode.R))
         {
             return true;
         } else
         {
             return false;
         }
+    }
+
+    public bool ResetKey()
+    {
+        return Input.GetKeyDown(KeyCode.Return);
     }
 
 }
