@@ -15,11 +15,6 @@ public class ExplodeOnCollision : MonoBehaviour
     [SerializeField]
     private AudioClip sound;
 
-    private void Start()
-    {
-        
-    }
-
     private void OnCollisionEnter(Collision collision)
     {
            if (collision.rigidbody != null)
@@ -41,7 +36,7 @@ public class ExplodeOnCollision : MonoBehaviour
                 Debug.Log("Hit a rigidbody");
                 rb.AddExplosionForce(power, explosionPosition, radius, upForce, ForceMode.Impulse);
                 Debug.Log("Bomb exploded and dies now, RIP");
-                GameObject.Destroy(gameObject);
+                Destroy(gameObject);
             }
         }
     }
