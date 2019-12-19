@@ -20,18 +20,16 @@ public class PatrolPoints : MonoBehaviour
 
     void GoToNextPoint()
     {
-        if (points.Length == 0)
-            return;
-
-        agent.destination = points[destPoint].position;
-
-        destPoint = (destPoint + 1) % points.Length;
+        if (points.Length != 0)
+        {
+            agent.destination = points[destPoint].position;
+            destPoint = (destPoint + 1) % points.Length;
+        }
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (!agent.pathPending && agent.remainingDistance < 1f)
-            GoToNextPoint();
+        if (!agent.pathPending && agent.remainingDistance < 1f) { GoToNextPoint(); }
     }
 }

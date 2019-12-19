@@ -11,6 +11,5 @@ public class PlaySoundOnCollision : MonoBehaviour
     {
         Debug.Log("Collision");
         AudioSource.PlayClipAtPoint(clip, gameObject.transform.position);
-
     }
 }
