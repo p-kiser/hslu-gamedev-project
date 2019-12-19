@@ -9,6 +9,12 @@ public class TeleportScript : MonoBehaviour
     [SerializeField]
     private AudioClip sound;
 
+    PlayerStatus playerStatus;
+
+    private void Start()
+    {
+        playerStatus = GameObject.FindWithTag("Player").GetComponent<PlayerStatus>();
+    }
 
     public void OnTriggerEnter(Collider other)
     {   
@@ -22,9 +28,7 @@ public class TeleportScript : MonoBehaviour
             AudioSource.PlayClipAtPoint(sound, rb.transform.position, 1);
 
             // Set a new respawn position of the Player when he dies
-            PlayerStatus playerStatus = GameObject.FindWithTag("Player").GetComponent<PlayerStatus>();
-
-            if (other.gameObject.tag == "Player") // Make sure only the player can change the respawn position
+            if (other.gameObject.tag == "Player")
             {
                 playerStatus.RespawnPosition = Destination.transform;
             }
