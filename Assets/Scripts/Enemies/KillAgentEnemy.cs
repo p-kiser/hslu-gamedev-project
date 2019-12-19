@@ -14,7 +14,6 @@ public class KillAgentEnemy : MonoBehaviour
     {
         AudioSource.PlayClipAtPoint(sound, gameObject.transform.position);
 
-        Debug.Log(other.gameObject.tag);
         if (other.gameObject.CompareTag("Player"))
         {
             Debug.Log("DAMN you killed that enemy hard!");

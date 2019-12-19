@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class ProjectileController : MonoBehaviour
 {
-    GameObject gob;
     // Start is called before the first frame update
     void Start()
     {

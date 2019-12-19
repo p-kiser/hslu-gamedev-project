@@ -76,7 +76,6 @@ public class ShootAtPlayerInRange : MonoBehaviour
                     shooted = true;
                     Invoke("ToggleShooted", RATE_OF_FIRE);
                 } 
-                
             }
         }
     }
@@ -93,7 +92,7 @@ public class ShootAtPlayerInRange : MonoBehaviour
         projectiles[i].transform.position = transform.position;
         projectiles[i].SetActive(true);
 
-        // shoot projectile and increase the counter
+        // shoot projectile
         rbs[index].AddForce((target.transform.position - transform.position) * bulletSpeed);
 
         Debug.Log("Shooteded a projectile called: " + index);

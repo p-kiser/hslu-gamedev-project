@@ -99,7 +99,7 @@ public class DamageShootAtPlayerInRange : MonoBehaviour
         projectiles[i].transform.position = transform.position;
         projectiles[i].SetActive(true);
 
-        // shoot projectile and increase the counter
+        // shoot projectile
         rbs[index].AddForce((target.transform.position - transform.position) * bulletSpeed);
     }
 
