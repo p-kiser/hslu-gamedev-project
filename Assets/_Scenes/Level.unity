@@ -16428,6 +16428,26 @@ PrefabInstance:
       propertyPath: runningMultiplikator
       value: 1.5
       objectReference: {fileID: 0}
+    - target: {fileID: 8595029065064527841, guid: 50af7ba0f048b4ae58654cb993c17274,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 8595029065064527841, guid: 50af7ba0f048b4ae58654cb993c17274,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0.13052616
+      objectReference: {fileID: 0}
+    - target: {fileID: 8595029065064527841, guid: 50af7ba0f048b4ae58654cb993c17274,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.9914449
+      objectReference: {fileID: 0}
+    - target: {fileID: 8595029065064527841, guid: 50af7ba0f048b4ae58654cb993c17274,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 15
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 50af7ba0f048b4ae58654cb993c17274, type: 3}
 --- !u!4 &883883763 stripped
